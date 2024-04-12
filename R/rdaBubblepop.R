@@ -26,6 +26,8 @@
 #' @import highcharter
 #' @import dplyr
 #' @import rlang
+#' @export
+#'
 
 rdaBubblepop <- function(
     df,
