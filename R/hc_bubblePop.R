@@ -23,10 +23,9 @@
 #' provide as a string
 #' @return
 #' A responsive html bubblepop chart. Bubblepops are a combination of bar and
-#' @export
-#'
-#' @examples
-#' @importFrom highcharter dplyr rlang
+#' @import highcharter
+#' @import dplyr
+#' @import rlang
 
 rdaBubblepop <- function(
     df,
