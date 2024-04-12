@@ -26,18 +26,8 @@
 #' @export
 #'
 #' @examples
-#' rdaBubblepop(
-#' df=df,
-#' x='race_label_short',
-#' y='rate',
-#' z='count',
-#' title=title_text,
-#' subtitle= subtitle_text,
-#' tooltip_text=tooltip_text,
-#' caption = caption_text,
-#' yaxis_label = "''", # format for your y axis labels
-#' export_data_label=list(pointFormat='{point.rate:.1f} per 1K'))
-#'
+#' @importFrom highcharter dplyr rlang
+
 rdaBubblepop <- function(
     df,
     x,
