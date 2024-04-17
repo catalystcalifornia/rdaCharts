@@ -139,8 +139,11 @@ rdaBar <- function(
 
   hchart(df,
          "bar",
-         hcaes(x = !!rlang::ensym(x), y = !!rlang::ensym(y),
-         tooltip =  list(headerFormat='', pointFormat=tooltip_text))) %>%
+         hcaes(x = !!rlang::ensym(x), y = !!rlang::ensym(y))) %>%
+
+    hc_tooltip(headerFormat='', # removes series label from top of tooltip
+               pointFormat = tooltip_text,
+               useHTML=TRUE) %>%  # allows tooltip to read <br> html in reformatted tooltip_text
 
     hc_title(text = title) %>%
 
