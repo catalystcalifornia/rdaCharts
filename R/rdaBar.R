@@ -28,10 +28,10 @@ rdaBar <- function(
     df,
     x, # independent variable
     y, # dependent variable
-    title, # chart title
-    subtitle,
-    tooltip_text,
-    caption) {
+    title="", # chart title
+    subtitle="",
+    tooltip_text="",
+    caption="") {
 
   ##### Set themes and options ####
   # set global options to ensure that comma separator is a comma for highchart graphs

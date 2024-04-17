@@ -4,7 +4,7 @@
 \alias{rdaBar}
 \title{Highcharts horizontal bar chart}
 \usage{
-rdaBar(df, x, y, title, subtitle, tooltip_text, caption)
+rdaBar(df, x, y, title = "", subtitle = "", tooltip_text = "", caption = "")
 }
 \arguments{
 \item{df}{name of dataframe}
