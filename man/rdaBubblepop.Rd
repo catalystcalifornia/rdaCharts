@@ -2,7 +2,7 @@
 % Please edit documentation in R/rdaBubblepop.R
 \name{rdaBubblepop}
 \alias{rdaBubblepop}
-\title{Title}
+\title{Highcharts Bubblepop chart with Catalyst California theme}
 \usage{
 rdaBubblepop(
   df,
@@ -42,5 +42,5 @@ rdaBubblepop(
 A responsive html bubblepop chart. Bubblepops are a combination of bar and
 }
 \description{
-Title
+Highcharts Bubblepop chart with Catalyst California theme
 }

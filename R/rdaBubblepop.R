@@ -1,5 +1,5 @@
 
-#' Title
+#' Highcharts Bubblepop chart with Catalyst California theme
 #'
 #' @param x
 #' string of the independent variable to appear on y-axis
