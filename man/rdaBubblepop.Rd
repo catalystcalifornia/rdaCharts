@@ -18,6 +18,8 @@ rdaBubblepop(
 )
 }
 \arguments{
+\item{df}{name of dataframe}
+
 \item{x}{string of the independent variable to appear on y-axis}
 
 \item{y}{string of the dependent variable to appear on x-axis}
@@ -28,19 +30,17 @@ rdaBubblepop(
 
 \item{subtitle}{provide as a string}
 
-\item{tooltip_text}{Content displayed when cursor hovers over bars. Provide as string (can include Js and HTML syntax).}
+\item{tooltip_text}{provide as a string}
 
 \item{caption}{provide as a string}
 
 \item{yaxis_label}{provide as a string}
 
-\item{export_data_label}{provide as a string (can include Js and HTML syntax).
-e.g., "    '{point.rate:.1f}\%'"}
+\item{export_data_label}{provide as a string}
 }
 \value{
 A responsive html bubblepop chart. Bubblepops are a combination of bar and
 }
 \description{
-#' @param df
-name of dataframe
+Highcharts Bubblepop chart with Catalyst California theme
 }
