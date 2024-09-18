@@ -12,8 +12,7 @@ rdaStackedBar(
   title = "",
   subtitle = "",
   tooltip_text = "",
-  caption = "",
-  export_data_label = ""
+  caption = ""
 )
 }
 \arguments{
@@ -32,9 +31,12 @@ rdaStackedBar(
 \item{tooltip_text}{Content displayed when cursor hovers over bars. Provide as string (can include Js and HTML syntax).}
 
 \item{caption}{Chart caption provided as string - appears at bottom}
+<<<<<<< HEAD
 
 \item{export_data_label}{provide as a string (can include Js and HTML syntax).
 e.g., "    '{point.rate:.1f}\%'"}
+=======
+>>>>>>> 16f0f1428fe3414784f36974762d4215190d0c09
 }
 \value{
 An interactive stacked bar highchart
