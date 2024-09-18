@@ -2,7 +2,11 @@
 
 export(rdaBar)
 export(rdaBubblepop)
+<<<<<<< HEAD
 export(rdaStackedBar)
+=======
+export(rdaGroupedBar)
+>>>>>>> 3250cf48e28513a50a3e9c8082a4598dcd6582e5
 import(dplyr)
 import(highcharter)
 import(rlang)
