@@ -2,6 +2,7 @@
 
 export(rdaBar)
 export(rdaBubblepop)
+export(rdaStackedBar)
 export(rdaGroupedBar)
 import(dplyr)
 import(highcharter)
