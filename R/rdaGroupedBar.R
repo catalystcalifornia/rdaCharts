@@ -17,6 +17,9 @@
 #' Content displayed when cursor hovers over bars. Provide as string (can include Js and HTML syntax).
 #' @param caption
 #' Chart caption provided as string - appears at bottom
+#' @param export_data_label
+#' provide as a string (can include Js and HTML syntax).
+#' e.g., "	'{point.rate:.1f}%'"
 #' @return
 #' An interactive grouped bar highchart
 #' @import highcharter
@@ -34,7 +37,8 @@ rdaGroupedBar <- function(
     title="", # chart title
     subtitle="",
     tooltip_text="",
-    caption="") {
+    caption="",
+    export_data_label="") {
 
   ##### Set themes and options ####
   # set global options to ensure that comma separator is a comma for highchart graphs
@@ -185,7 +189,7 @@ rdaGroupedBar <- function(
                      series=list(
                        dataLabels=list(
                          enabled=TRUE,
-                         format='{point.value:.1f}%')))),
+                         format=export_data_label)))),
                  filename = paste0(subtitle,"_Catalyst California, catalystcalifornia.org, 2023."),
                  buttons=list(
                    contextButton=list(

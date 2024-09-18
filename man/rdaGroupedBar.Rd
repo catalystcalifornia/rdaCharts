@@ -12,7 +12,8 @@ rdaGroupedBar(
   title = "",
   subtitle = "",
   tooltip_text = "",
-  caption = ""
+  caption = "",
+  export_data_label = ""
 )
 }
 \arguments{
@@ -31,6 +32,9 @@ rdaGroupedBar(
 \item{tooltip_text}{Content displayed when cursor hovers over bars. Provide as string (can include Js and HTML syntax).}
 
 \item{caption}{Chart caption provided as string - appears at bottom}
+
+\item{export_data_label}{provide as a string (can include Js and HTML syntax).
+e.g., "    '{point.rate:.1f}\%'"}
 }
 \value{
 An interactive grouped bar highchart

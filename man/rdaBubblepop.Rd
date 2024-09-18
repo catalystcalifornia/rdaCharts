@@ -36,7 +36,8 @@ rdaBubblepop(
 
 \item{yaxis_label}{provide as a string}
 
-\item{export_data_label}{provide as a string}
+\item{export_data_label}{provide as a string (can include Js and HTML syntax).
+e.g., "    '{point.rate:.1f}\%'"}
 }
 \value{
 A responsive html bubblepop chart. Bubblepops are a combination of bar and
