@@ -1,7 +1,7 @@
 
 #' Highcharts Bubblepop chart with Catalyst California theme
 #'
-#'#' @param df
+#' @param df
 #' name of dataframe
 #' @param x
 #' string of the independent variable to appear on y-axis

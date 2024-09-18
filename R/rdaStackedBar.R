@@ -16,7 +16,7 @@
 #' Content displayed when cursor hovers over bars. Provide as string (can include Js and HTML syntax).
 #' @param caption
 #' Chart caption provided as string - appears at bottom
-#' #' @param export_data_label
+#' @param export_data_label
 #' provide as a string (can include Js and HTML syntax).
 #' e.g., "	'{point.rate:.1f}%'"
 #'
