@@ -12,7 +12,8 @@ rdaStackedBar(
   title = "",
   subtitle = "",
   tooltip_text = "",
-  caption = ""
+  caption = "",
+  export_data_label = ""
 )
 }
 \arguments{

@@ -4,7 +4,16 @@
 \alias{rdaBar}
 \title{Highcharts horizontal bar chart}
 \usage{
-rdaBar(df, x, y, title = "", subtitle = "", tooltip_text = "", caption = "")
+rdaBar(
+  df,
+  x,
+  y,
+  title = "",
+  subtitle = "",
+  tooltip_text = "",
+  caption = "",
+  export_data_label = ""
+)
 }
 \arguments{
 \item{df}{name of dataframe}
@@ -20,6 +29,9 @@ rdaBar(df, x, y, title = "", subtitle = "", tooltip_text = "", caption = "")
 \item{tooltip_text}{provide as a string}
 
 \item{caption}{provide as a string}
+
+\item{export_data_label}{provide as a string (can include Js and HTML syntax).
+e.g., "    '{point.rate:.1f}\%'"}
 }
 \value{
 A responsive horinzontal bar chart

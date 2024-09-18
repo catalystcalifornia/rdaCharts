@@ -22,7 +22,8 @@
 #' @param yaxis_label
 #' provide as a string
 #' @param export_data_label
-#' provide as a string
+#' provide as a string (can include Js and HTML syntax).
+#' e.g., "	'{point.rate:.1f}%'"
 #' @return
 #' A responsive html bubblepop chart. Bubblepops are a combination of bar and
 #' @import highcharter
