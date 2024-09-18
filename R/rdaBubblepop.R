@@ -1,10 +1,10 @@
 
 #' Highcharts Bubblepop chart with Catalyst California theme
 #'
+#'#' @param df
+#' name of dataframe
 #' @param x
 #' string of the independent variable to appear on y-axis
-#' @param df
-#' name of dataframe
 #' @param y
 #' string of the dependent variable to appear on x-axis
 #' @param z
@@ -14,13 +14,14 @@
 #' @param subtitle
 #' provide as a string
 #' @param tooltip_text
-#' provide as a string
+#' Content displayed when cursor hovers over bars. Provide as string (can include Js and HTML syntax).
 #' @param caption
 #' provide as a string
 #' @param yaxis_label
 #' provide as a string
 #' @param export_data_label
-#' provide as a string
+#' provide as a string (can include Js and HTML syntax).
+#' e.g., "	'{point.rate:.1f}%'"
 #' @return
 #' A responsive html bubblepop chart. Bubblepops are a combination of bar and
 #' @import highcharter

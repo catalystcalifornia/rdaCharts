@@ -11,9 +11,12 @@
 #' @param subtitle
 #' provide as a string
 #' @param tooltip_text
-#' provide as a string
+#' Content displayed when cursor hovers over bars. Provide as string (can include Js and HTML syntax).
 #' @param caption
 #' provide as a string
+#' @param export_data_label
+#' provide as a string (can include Js and HTML syntax).
+#' e.g., "	'{point.rate:.1f}%'"
 #'
 #' @return
 #' A responsive horinzontal bar chart
@@ -31,7 +34,8 @@ rdaBar <- function(
     title="", # chart title
     subtitle="",
     tooltip_text="",
-    caption="") {
+    caption="",
+    export_data_label="") {
 
   ##### Set themes and options ####
   # set global options to ensure that comma separator is a comma for highchart graphs
@@ -175,7 +179,7 @@ rdaBar <- function(
           series=list(
             dataLabels=list(
               enabled=TRUE,
-              format='{point.rate:.1f}%')))),
+              format=export_data_label)))),
       filename = paste0(subtitle,"_Catalyst California, catalystcalifornia.org, 2023."),
       buttons=list(contextButton=list(menuItems=list('downloadPNG', 'downloadSVG',
                                                      'downloadXLS', 'downloadCSV'))))}
