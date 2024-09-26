@@ -149,7 +149,7 @@ rdaGroupedBar <- function(
 
 
 
-  result <- hchart(df=df,
+  result <- hchart(df,
                    'bar',
                    hcaes(
                      x = !!rlang::ensym(x),
