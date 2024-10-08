@@ -9,6 +9,7 @@ rdaStackedBar(
   x,
   y,
   z,
+  bar_colors = list(meteorite, lavender, peridot, papaya, ccblue, black, gainsboro),
   title = "",
   subtitle = "",
   tooltip_text = "",
@@ -24,6 +25,8 @@ rdaStackedBar(
 \item{y}{String of the column name of the dependent variable (e.g., Rates, Counts, etc.) to be plotted on the y-axis}
 
 \item{z}{String of the column name of the grouping variable (e.g., subcategories to further cut the data within x) to create stacked bars}
+
+\item{bar_colors}{List of hexcode colors that the chart should use. By default will use pre-defined CC colors: meteorite, lavender, peridot, papaya, ccblue, black, gainsboro.}
 
 \item{title}{Chart title provided as string - appears at the top of chart}
 

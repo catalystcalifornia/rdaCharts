@@ -8,6 +8,8 @@
 #' String of the column name of the dependent variable (e.g., Rates, Counts, etc.) to be plotted on the y-axis
 #' @param z
 #' String of the column name of the grouping variable (e.g., subcategories to further cut the data within x) to create stacked bars
+#' @param bar_colors
+#' List of hexcode colors that the chart should use. By default will use pre-defined CC colors: meteorite, lavender, peridot, papaya, ccblue, black, gainsboro.
 #' @param title
 #' Chart title provided as string - appears at the top of chart
 #' @param subtitle
@@ -19,6 +21,7 @@
 #' @param export_data_label
 #' provide as a string (can include Js and HTML syntax).
 #' e.g., "	'{point.rate:.1f}%'"
+
 #'
 #' @return
 #' An interactive stacked bar highchart
@@ -34,6 +37,7 @@ rdaStackedBar <- function(
     x, # independent variable
     y, # dependent variable
     z, # grouping variable
+    bar_colors=list(meteorite, lavender, peridot, papaya, ccblue, black, gainsboro),
     title="", # chart title
     subtitle="",
     tooltip_text="",
@@ -158,6 +162,8 @@ rdaStackedBar <- function(
     hc_tooltip(headerFormat='', # removes series label from top of tooltip
                pointFormat = tooltip_text,
                useHTML=TRUE) %>%  # allows tooltip to read <br> html in reformatted tooltip_text
+
+    hc_colors(bar_colors)%>%
 
     hc_title(text = title) %>%
 
