@@ -9,6 +9,8 @@
 #' String of the column name of the dependent variable (e.g., Rates, Counts, etc.) to be plotted on the y-axis
 #' @param z
 #' String of the column name of the grouping variable (e.g., subcategories to further cut the data within x) to create stacked bars
+#' @param bar_colors
+#' List of hexcode colors that the chart should use. By default will use pre-defined CC colors: meteorite, lavender, peridot, papaya, ccblue, black, gainsboro.
 #' @param title
 #' Chart title provided as string - appears at the top of chart
 #' @param subtitle
@@ -34,6 +36,7 @@ rdaGroupedBar <- function(
     x, # independent variable
     y, # dependent variable
     z, # grouping variable
+    bar_colors=list(meteorite, lavender, peridot, papaya, ccblue, black, gainsboro),
     title="", # chart title
     subtitle="",
     tooltip_text="",
@@ -160,7 +163,7 @@ rdaGroupedBar <- function(
                pointFormat = tooltip_text,
                useHTML=TRUE) %>%  # allows tooltip to read <br> html in reformatted tooltip_text
 
-    hc_colors(c("#211447", peridot))%>%
+    hc_colors(bar_colors)%>%
 
     hc_title(text = title) %>%
 
