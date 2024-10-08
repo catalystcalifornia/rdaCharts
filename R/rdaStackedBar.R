@@ -21,7 +21,6 @@
 #' @param export_data_label
 #' provide as a string (can include Js and HTML syntax).
 #' e.g., "	'{point.rate:.1f}%'"
-
 #'
 #' @return
 #' An interactive stacked bar highchart
