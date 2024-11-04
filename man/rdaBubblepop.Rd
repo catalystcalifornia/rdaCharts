@@ -9,6 +9,7 @@ rdaBubblepop(
   x,
   y,
   z,
+  theme = theme_cc,
   title = "",
   subtitle = "",
   tooltip_text = "",
@@ -26,6 +27,8 @@ rdaBubblepop(
 
 \item{z}{string of the variable that stores count to determine bubble size}
 
+\item{theme}{a hc_theme object. can be created by user or be a predefined project theme (options include: theme_cc). default value is theme_cc.}
+
 \item{title}{provide as a string}
 
 \item{subtitle}{provide as a string}
@@ -36,8 +39,7 @@ rdaBubblepop(
 
 \item{yaxis_label}{provide as a string}
 
-\item{export_data_label}{provide as a string (can include Js and HTML syntax).
-e.g., "    '{point.rate:.1f}\%'"}
+\item{export_data_label}{provide as a string (can include Js and HTML syntax), e.g., "    '{point.rate:.1f}\%'"}
 }
 \value{
 A responsive html bubblepop chart. Bubblepops are a combination of bar and

@@ -8,6 +8,7 @@ rdaBar(
   df,
   x,
   y,
+  theme = theme_cc,
   title = "",
   subtitle = "",
   tooltip_text = "",
@@ -22,6 +23,8 @@ rdaBar(
 
 \item{y}{string of the dependent variable to appear on x-axis}
 
+\item{theme}{a hc_theme object. can be created by user or be a predefined project theme (options include: theme_cc). default value is theme_cc.}
+
 \item{title}{provide as a string}
 
 \item{subtitle}{provide as a string}
@@ -30,11 +33,10 @@ rdaBar(
 
 \item{caption}{provide as a string}
 
-\item{export_data_label}{provide as a string (can include Js and HTML syntax).
-e.g., "    '{point.rate:.1f}\%'"}
+\item{export_data_label}{provide as a string (can include JS and HTML syntax), e.g., "    '{point.rate:.1f}\%'"}
 }
 \value{
-A responsive horinzontal bar chart
+A responsive horizontal bar chart
 }
 \description{
 Highcharts horizontal bar chart

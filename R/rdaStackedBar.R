@@ -19,9 +19,9 @@
 #' @param caption
 #' Chart caption provided as string - appears at bottom
 #' @param export_data_label
-#' provide as a string (can include Js and HTML syntax).
-#' e.g., "	'{point.rate:.1f}%'"
-#'
+#' provide as a string (can include Js and HTML syntax), e.g., "	'{point.rate:.1f}%'"
+#' @param theme
+#' a hc_theme object. can be created by user or be a predefined project theme (options include: theme_cc). default value is theme_cc.
 #' @return
 #' An interactive stacked bar highchart
 #' @import highcharter
@@ -37,6 +37,7 @@ rdaStackedBar <- function(
     y, # dependent variable
     z, # grouping variable
     bar_colors=list(meteorite, lavender, peridot, papaya, ccblue, black, gainsboro),
+    theme=theme_cc,
     title="", # chart title
     subtitle="",
     tooltip_text="",

@@ -10,6 +10,7 @@ rdaGroupedBar(
   y,
   z,
   bar_colors = list(meteorite, lavender, peridot, papaya, ccblue, black, gainsboro),
+  theme = theme_cc,
   title = "",
   subtitle = "",
   tooltip_text = "",
@@ -26,7 +27,9 @@ rdaGroupedBar(
 
 \item{z}{String of the column name of the grouping variable (e.g., subcategories to further cut the data within x) to create stacked bars}
 
-\item{bar_colors}{List of hexcode colors that the chart should use. By default will use pre-defined CC colors: meteorite, lavender, peridot, papaya, ccblue, black, gainsboro.}
+\item{bar_colors}{List of hexcode colors that the chart should use (e.g., c("#EFEFEF", "#F25922", "#CEEA01"). By default will use pre-defined CC colors: meteorite, lavender, peridot, papaya, ccblue, black, gainsboro.}
+
+\item{theme}{a hc_theme object. can be created by user or be a predefined project theme (options include: theme_cc). default value is theme_cc.}
 
 \item{title}{Chart title provided as string - appears at the top of chart}
 
@@ -36,8 +39,7 @@ rdaGroupedBar(
 
 \item{caption}{Chart caption provided as string - appears at bottom}
 
-\item{export_data_label}{provide as a string (can include Js and HTML syntax).
-e.g., "    '{point.rate:.1f}\%'"}
+\item{export_data_label}{provide as a string (can include Js and HTML syntax), e.g., "    '{point.rate:.1f}\%'"}
 }
 \value{
 An interactive grouped bar highchart
