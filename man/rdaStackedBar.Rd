@@ -29,7 +29,7 @@ rdaStackedBar(
 
 \item{bar_colors}{List of hexcode colors that the chart should use (e.g., c("#EFEFEF", "#F25922", "#CEEA01"). By default will use pre-defined CC colors: meteorite, lavender, peridot, papaya, ccblue, black, gainsboro.}
 
-\item{theme}{a hc_theme object. can be created by user or be a predefined project theme (options include: theme_cc). default value is theme_cc.}
+\item{theme}{a hc_theme object. can be created by user or be a predefined project theme (options include: theme_cc, theme_fbhc). default value is theme_cc.}
 
 \item{title}{Chart title provided as string - appears at the top of chart}
 

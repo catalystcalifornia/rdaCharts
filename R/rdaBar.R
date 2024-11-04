@@ -17,7 +17,7 @@
 #' @param export_data_label
 #' provide as a string (can include JS and HTML syntax), e.g., "	'{point.rate:.1f}%'"
 #' @param theme
-#' a hc_theme object. can be created by user or be a predefined project theme (options include: theme_cc). default value is theme_cc.
+#' a hc_theme object. can be created by user or be a predefined project theme (options include: theme_cc, theme_fbhc). default value is theme_cc.
 #' @return
 #' A responsive horizontal bar chart
 #' @import highcharter

@@ -1,6 +1,5 @@
 library(highcharter)
 
-
 ##### Set themes and options ####
 # set global options to ensure that comma separator is a comma for highchart graphs
 lang <- getOption("highcharter.lang")
