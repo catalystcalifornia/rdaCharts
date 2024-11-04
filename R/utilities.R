@@ -8,37 +8,41 @@ lang$thousandsSep <- ","
 options(highcharter.lang = lang)
 
 ## COLORS ##
+# Catalyst California
 papaya <- "#F25922"
 peridot <- "#CEEA01"
 lavender <- "#CEC4E2"
 meteorite <- "#3A207D"
-ccblue <- "#0860BC"
+cc_colors <- c(meteorite, lavender, papaya, peridot)
 
 black <- "#000000"
 alabaster<-"#FBFBFB"
 gainsboro <- "#DEDEDE"
 
+# CC-Recommended colors and colors ramps for data analysis
+ccblue <- "#0860BC"
 divergent_color_ramp <- c("#372278", "#5F3B63","#A8683C", "#D58424", "#FF9900")
 grouped_color_ramp <-c(meteorite, papaya, peridot, "#BDAFE9", "#E2D9FF")
 group_colors_item <- c(meteorite, papaya, peridot, lavender, ccblue, "#5F3B63","#A8683C", "#D58424", "#FF9900")
+
 ## FONTS ##
-main_font <- "Inter"
+cc_font <- "Inter"
 regular_font_weight <- 400
 black_font_weight <- 800
 semi_bold_font_weight <- 600
 
 ##### highchart theme #####
 theme_cc <- hc_theme(
-  colors = c(meteorite, lavender, papaya, peridot),
+  colors = cc_colors,
   chart = list(
     backgroundColor = alabaster,
     style = list(
-      fontFamily = main_font, # font_subtitle
+      fontFamily = cc_font, # font_subtitle
       color=alabaster)),
   title = list(widthAdjust = -50,
                style = list(
                  color = black,
-                 fontFamily = main_font, # font_title
+                 fontFamily = cc_font, # font_title
                  fontWeight = black_font_weight,
                  textAlign="left",
                  fontSize='21px'),
@@ -46,14 +50,14 @@ theme_cc <- hc_theme(
   subtitle = list(
     style = list(
       color = black,
-      fontFamily = main_font, # font_subtitle
+      fontFamily = cc_font, # font_subtitle
       fontWeight = regular_font_weight,
       fontSize='14px'),
     align='left'),
   caption = list(
     style = list(
       color = black,
-      fontFamily = main_font, # font_caption
+      fontFamily = cc_font, # font_caption
       fontWeight = regular_font_weight,
       fontSize = "10px",
       textAlign = "left",
@@ -65,7 +69,7 @@ theme_cc <- hc_theme(
     labels=list(
       style=list(
         color=black,
-        fontFamily = main_font, # font_x_label
+        fontFamily = cc_font, # font_x_label
         fontWeight = semi_bold_font_weight,
         width=120,  #argument to modify the width of the labels
         min=0,
@@ -76,7 +80,7 @@ theme_cc <- hc_theme(
     labels=list(
       style=list(
         color=black,
-        fontFamily = main_font, # font_axis_label
+        fontFamily = cc_font, # font_axis_label
         fontWeight = regular_font_weight,
         fontSize="10px",
         margin = 50)),
@@ -90,13 +94,13 @@ theme_cc <- hc_theme(
 
   legend = list(
     itemStyle = list(
-      fontFamily = main_font, # font_axis_label
+      fontFamily = cc_font, # font_axis_label
       fontWeight = regular_font_weight,
       color = black,
       fontSize = '12px'),
 
     itemHoverStyle = list(
-      fontFamily = main_font, # font_table_text
+      fontFamily = cc_font, # font_table_text
       fontWeight = regular_font_weight,
       color = black),
     plotLines=list(color=gainsboro)))
