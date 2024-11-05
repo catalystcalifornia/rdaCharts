@@ -23,6 +23,10 @@ fbhc_h1_font <- "Source Serif Pro"
 fbhc_title_font <- "Montserrat"
 fbhc_body_font <- "Open Sans"
 
+regular_font_weight <- 400
+black_font_weight <- 800
+semi_bold_font_weight <- 600
+
 ##### highchart theme #####
 theme_fbhc <- hc_theme(
   colors = fbhc_colors,
@@ -94,5 +98,5 @@ theme_fbhc <- hc_theme(
     itemHoverStyle = list(
       fontFamily = fbhc_body_font,
       fontWeight = regular_font_weight,
-      color = black),
+      color = fbhc_black),
     plotLines=list(color=fbhc_grey)))
