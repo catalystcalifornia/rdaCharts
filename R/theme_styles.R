@@ -2,3 +2,6 @@
 
 theme_opts <- list(theme_cc = theme_cc, theme_fbhc = theme_fbhc)
 
+#' @format a vector with the available pre-defined highcharts templates
+#' @export
+
