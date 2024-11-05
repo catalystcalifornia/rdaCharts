@@ -22,7 +22,7 @@
 #' @param export_data_label
 #' provide as a string (can include Js and HTML syntax), e.g., "	'{point.rate:.1f}%'"
 #' @param theme
-#' a hc_theme object. can be created by user or be a predefined project theme (options include: theme_cc, theme_fbhc). default value is theme_cc.
+#' a hc_theme object. can be created by user or be a predefined project theme (options include: "theme_cc", "theme_fbhc"). default value is theme_cc.
 #' @return
 #' An interactive grouped bar highchart
 #' @import highcharter
@@ -38,7 +38,7 @@ rdaGroupedBar <- function(
     y, # dependent variable
     z, # grouping variable
     bar_colors=list(meteorite, lavender, peridot, papaya, ccblue, black, gainsboro),
-    theme=theme_cc,
+    theme="theme_cc",
     title="", # chart title
     subtitle="",
     tooltip_text="",
@@ -81,7 +81,7 @@ rdaGroupedBar <- function(
     hc_legend(enabled = TRUE,
               x = 20)%>%
 
-    hc_add_theme(theme)%>%
+    hc_add_theme(theme_opts[[theme]]) %>%
 
     hc_chart(marginRight=120,
              height=480) %>%

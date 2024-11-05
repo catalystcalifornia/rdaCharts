@@ -9,7 +9,7 @@ rdaBubblepop(
   x,
   y,
   z,
-  theme = theme_cc,
+  theme = "theme_cc",
   title = "",
   subtitle = "",
   tooltip_text = "",
@@ -27,7 +27,7 @@ rdaBubblepop(
 
 \item{z}{string of the variable that stores count to determine bubble size}
 
-\item{theme}{a hc_theme object. can be created by user or be a predefined project theme (options include: theme_cc, theme_fbhc). default value is theme_cc.}
+\item{theme}{a hc_theme object. can be created by user or be a predefined project theme (options include: "theme_cc", "theme_fbhc"). default value is theme_cc.}
 
 \item{title}{provide as a string}
 

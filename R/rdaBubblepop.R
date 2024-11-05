@@ -24,7 +24,7 @@
 #' @param export_data_label
 #' provide as a string (can include Js and HTML syntax), e.g., "	'{point.rate:.1f}%'"
 #' @param theme
-#' a hc_theme object. can be created by user or be a predefined project theme (options include: theme_cc, theme_fbhc). default value is theme_cc.
+#' a hc_theme object. can be created by user or be a predefined project theme (options include: "theme_cc", "theme_fbhc"). default value is theme_cc.
 #' @return
 #' A responsive html bubblepop chart. Bubblepops are a combination of bar and
 #' @import highcharter
@@ -39,7 +39,7 @@ rdaBubblepop <- function(
     x,
     y,
     z,
-    theme=theme_cc,
+    theme="theme_cc",
     title="",
     subtitle= "",
     tooltip_text="",
@@ -123,7 +123,7 @@ rdaBubblepop <- function(
       useHTML=TRUE
     ) %>%
 
-    hc_add_theme(theme)%>%
+    hc_add_theme(theme_opts[[theme]]) %>%
 
     hc_chart(inverted = T,
              height = 480) %>%

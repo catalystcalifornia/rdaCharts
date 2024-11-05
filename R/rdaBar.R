@@ -17,7 +17,7 @@
 #' @param export_data_label
 #' provide as a string (can include JS and HTML syntax), e.g., "	'{point.rate:.1f}%'"
 #' @param theme
-#' a hc_theme object. can be created by user or be a predefined project theme (options include: theme_cc, theme_fbhc). default value is theme_cc.
+#' a hc_theme object. can be created by user or be a predefined project theme (options include: "theme_cc", "theme_fbhc"). default value is theme_cc.
 #' @return
 #' A responsive horizontal bar chart
 #' @import highcharter
@@ -31,7 +31,7 @@ rdaBar <- function(
     df,
     x, # independent variable
     y, # dependent variable
-    theme=theme_cc,
+    theme="theme_cc",
     title="", # chart title
     subtitle="",
     tooltip_text="",
@@ -67,7 +67,7 @@ rdaBar <- function(
               reversed =  TRUE,
               x=20) %>%
 
-    hc_add_theme(theme)%>%
+    hc_add_theme(theme_opts[[theme]]) %>%
 
     hc_chart(marginRight=120) %>%
 
