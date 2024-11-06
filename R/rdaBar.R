@@ -38,6 +38,14 @@ rdaBar <- function(
     caption="",
     export_data_label="") {
 
+  ##### Create environment to grab pre-defined theme_cc #####
+  theme_env <- new.env(parent = emptyenv())
+  get_themes(env=theme_env)
+
+  list_of_themes <- theme_env$theme_opts
+
+  theme <- list_of_themes[[theme]]
+
   ##### Chart function #####
   df <-  df %>%
     arrange(desc(y))
@@ -67,7 +75,7 @@ rdaBar <- function(
               reversed =  TRUE,
               x=20) %>%
 
-    hc_add_theme(theme_opts[[theme]]) %>%
+    hc_add_theme(theme) %>%
 
     hc_chart(marginRight=120) %>%
 

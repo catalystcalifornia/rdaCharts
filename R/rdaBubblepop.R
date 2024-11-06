@@ -48,6 +48,16 @@ rdaBubblepop <- function(
     export_data_label="") {
 
 
+  ##### Create environment to grab pre-defined theme_cc #####
+  theme_env <- new.env(parent = emptyenv())
+  get_themes(env=theme_env)
+
+  list_of_themes <- theme_env$theme_opts
+
+  theme <- list_of_themes[[theme]]
+
+
+  ##### Chart function #####
   yaxis_label_JS <- paste0("function() {
         	return this.value +", yaxis_label, "}")
 
@@ -123,7 +133,7 @@ rdaBubblepop <- function(
       useHTML=TRUE
     ) %>%
 
-    hc_add_theme(theme_opts[[theme]]) %>%
+    hc_add_theme(theme) %>%
 
     hc_chart(inverted = T,
              height = 480) %>%
