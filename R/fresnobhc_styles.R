@@ -8,7 +8,7 @@ secondary_color_b <- "#3E7E15"
 
 community_safety <- "#FDB913"
 
-fbhc_colors <- c(community_safety)
+fbhc_colors <- c(community_safety, primary_color, secondary_color_a, secondary_color_b)
 
 # Neutrals
 fbhc_black <- "#0A0A0A"
