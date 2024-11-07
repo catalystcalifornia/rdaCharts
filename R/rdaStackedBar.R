@@ -51,7 +51,19 @@ rdaStackedBar <- function(
 
   list_of_themes <- theme_env$theme_opts
 
-  theme <- list_of_themes[[theme]]
+  selected_theme <- list_of_themes[[theme]]
+
+  if (is.null(selected_theme) == TRUE) {
+    selected_theme <- list_of_themes[["theme_cc"]]
+    warning(paste0("The provided theme (", theme,
+                   ") is not pre-defined in rdaCharts. To return a chart, ",
+                   "the theme was replaced with the default value: theme_cc. ",
+                   "Please consult this list of available theme options: ",
+                   paste(names(list_of_themes), collapse = ", ") ,". ",
+                   "If an issue persists, please contact Hillary."))
+
+  }
+
 
   ##### Chart function #####
 
@@ -84,7 +96,7 @@ rdaStackedBar <- function(
               reversed =  TRUE,
               x=20) %>%
 
-    hc_add_theme(theme) %>%
+    hc_add_theme(selected_theme) %>%
 
     hc_chart(marginRight=120,
              height=480) %>%
