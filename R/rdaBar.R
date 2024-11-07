@@ -47,7 +47,8 @@ rdaBar <- function(
   selected_theme <- list_of_themes[[theme]]
 
   if ((theme %in% names(.GlobalEnv)) == TRUE) {
-    check_valid_theme <-  attributes(as.symbol(theme))$class == "hc_theme"
+    check_valid_theme <-  attributes(as.symbol(theme))$class
+    print(check_valid_theme)
 
     if (check_valid_theme==TRUE) {
     selected_theme <- as.symbol(theme)
