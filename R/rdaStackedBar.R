@@ -56,7 +56,6 @@ rdaStackedBar <- function(
   if ((theme %in% names(.GlobalEnv)) == TRUE) {
     get_theme_object <-  get(theme, envir = .GlobalEnv)
     check_valid_theme <- class(get_theme_object)
-    print(check_valid_theme)
 
     if (check_valid_theme=="hc_theme") {
       selected_theme <- get_theme_object
