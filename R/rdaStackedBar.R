@@ -45,7 +45,7 @@ rdaStackedBar <- function(
     export_data_label="") {
 
 
-  ##### Create environment to grab pre-defined theme_cc #####
+  ##### Confirm and select pre-defined theme_cc #####
   theme_env <- new.env(parent = emptyenv())
   get_themes(env=theme_env)
 
@@ -53,7 +53,17 @@ rdaStackedBar <- function(
 
   selected_theme <- list_of_themes[[theme]]
 
-  if (is.null(selected_theme) == TRUE) {
+  if ((theme %in% names(.GlobalEnv)) == TRUE) {
+    get_theme_object <-  get(theme, envir = .GlobalEnv)
+    check_valid_theme <- class(get_theme_object)
+    print(check_valid_theme)
+
+    if (check_valid_theme=="hc_theme") {
+      selected_theme <- get_theme_object
+      warning("Using a hc_theme created by user instead of pre-defined template in rdaCharts")
+    }
+
+  } else if (is.null(selected_theme) == TRUE) {
     selected_theme <- list_of_themes[["theme_cc"]]
     warning(paste0("The provided theme (", theme,
                    ") is not pre-defined in rdaCharts. To return a chart, ",
