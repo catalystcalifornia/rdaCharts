@@ -12,6 +12,7 @@
 
 get_themes <- function(env, theme_options=theme_options) {
   # create or overwrite objects in an environment
-  env$theme_opts <- theme_options
+  env$theme_opts <- list(theme_cc = theme_cc,
+                         theme_fbhc = theme_fbhc)
 
 }
