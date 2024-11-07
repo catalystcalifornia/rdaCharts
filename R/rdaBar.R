@@ -47,11 +47,12 @@ rdaBar <- function(
   selected_theme <- list_of_themes[[theme]]
 
   if ((theme %in% names(.GlobalEnv)) == TRUE) {
-    check_valid_theme <-  attributes(as.symbol(theme))$class
+    get_theme_object <-  get(theme, envir = .GlobalEnv)
+    check_valid_theme <- class(get_theme_object)
     print(check_valid_theme)
 
-    if (check_valid_theme==TRUE) {
-    selected_theme <- as.symbol(theme)
+    if (check_valid_theme=="hc_theme") {
+    selected_theme <- get_theme_object
     warning("Using a hc_theme created by user instead of pre-defined template in rdaCharts")
     }
 
