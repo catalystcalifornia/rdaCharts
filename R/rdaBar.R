@@ -46,8 +46,8 @@ rdaBar <- function(
 
   selected_theme <- list_of_themes[[theme]]
 
-  if ((theme %in% names(.GlobalEnv)) & (attributes(!!rlang::ensym(theme))$class == "hc_theme")) {
-    selected_theme <- !!rlang::ensym(theme)
+  if ((theme %in% names(.GlobalEnv)) & (attributes(as.symbol(theme))$class == "hc_theme")) {
+    selected_theme <- as.symbol(theme)
     warning("Using a hc_theme created by user instead of pre-defined template in rdaCharts")
 
   } else if (is.null(selected_theme) == TRUE) {
