@@ -68,7 +68,6 @@ rdaBar <- function(
 
   ##### Chart function #####
   df <-  df %>%
-    arrange(desc(y))
 
   hchart(df,
          "bar",
