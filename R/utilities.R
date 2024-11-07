@@ -4,17 +4,14 @@
 #' @param env
 #' a local environment created in each function and passed here to grab the
 #' selected template
-#'
+#' @param theme_options
+#' named list of predefined hc_theme objects
 #' @export
 #'
 
 
-
-get_themes <- function(env) {
+get_themes <- function(env, theme_options=theme_options) {
   # create or overwrite objects in an environment
-
-  theme_options <- list(theme_cc = theme_cc,
-                        theme_fbhc = theme_fbhc)
-
   env$theme_opts <- theme_options
+
 }

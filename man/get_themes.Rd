@@ -4,11 +4,13 @@
 \alias{get_themes}
 \title{Utility function to access predefined highcharts templates}
 \usage{
-get_themes(env)
+get_themes(env, theme_options = theme_options)
 }
 \arguments{
 \item{env}{a local environment created in each function and passed here to grab the
 selected template}
+
+\item{theme_options}{named list of predefined hc_theme objects}
 }
 \description{
 Utility function to access predefined highcharts templates
