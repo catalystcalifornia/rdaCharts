@@ -126,9 +126,11 @@ rdaBubblepop <- function(
               verticalAlign="middle",
               width="12%",
               layout="vertical",
+              borderWidth=1,
               borderRadius=5,
               itemMarginBottom=10,
               bubbleLegend =  list(enabled = TRUE,
+                                   connectorDistance=20,
                                    labels = list(
                                      format="{value:,.0f}",
                                      style=list(fontSize='10px')))) %>%

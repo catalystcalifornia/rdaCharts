@@ -110,9 +110,7 @@ theme_cc <- hc_theme(
     bubbleLegend =  list(
       borderColor=meteorite,
       connectorColor=meteorite,
-      borderWidth=2,
-      color=lavender,
-      connectorDistance=20)),
+      color=lavender)),
 
   series = list(
     "bubblePop" = list(
