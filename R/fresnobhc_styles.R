@@ -29,7 +29,7 @@ semi_bold_font_weight <- 600
 
 ##### highchart theme #####
 theme_fbhc <- hc_theme(
-  colors = fbhc_colors,
+  # colors = fbhc_colors,
 
   chart = list(
     backgroundColor = fbhc_white,
