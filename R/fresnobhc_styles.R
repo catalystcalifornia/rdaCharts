@@ -30,11 +30,13 @@ semi_bold_font_weight <- 600
 ##### highchart theme #####
 theme_fbhc <- hc_theme(
   colors = fbhc_colors,
+
   chart = list(
     backgroundColor = fbhc_white,
     style = list(
       fontFamily = fbhc_body_font,
       color=fbhc_white)),
+
   title = list(widthAdjust = -50,
                style = list(
                  color = fbhc_black,
@@ -43,6 +45,7 @@ theme_fbhc <- hc_theme(
                  textAlign="left",
                  fontSize='21px'),
                align = "left"),
+
   subtitle = list(
     style = list(
       color = fbhc_black,
@@ -50,6 +53,7 @@ theme_fbhc <- hc_theme(
       fontWeight = regular_font_weight,
       fontSize='14px'),
     align='left'),
+
   caption = list(
     style = list(
       color = fbhc_black,
@@ -92,11 +96,23 @@ theme_fbhc <- hc_theme(
     itemStyle = list(
       fontFamily = fbhc_body_font,
       fontWeight = regular_font_weight,
-      color = fbhc_black,
+      color = black,
       fontSize = '12px'),
-
     itemHoverStyle = list(
       fontFamily = fbhc_body_font,
       fontWeight = regular_font_weight,
-      color = fbhc_black),
-    plotLines=list(color=fbhc_grey)))
+      color = black),
+    borderColor=fbhc_grey,
+    plotLines=list(color=fbhc_grey)),
+
+  bubbleLegend =  list(
+    borderColor=primary_color,
+    connectorColor=primary_color,
+    marker = list(
+      fillColor = community_safety)),
+
+  plotOptions = list(
+    bubble=list(
+      marker=list(
+        fillColor=community_safety,
+        lineColor=primary_color))))

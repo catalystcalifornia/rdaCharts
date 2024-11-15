@@ -33,11 +33,13 @@ semi_bold_font_weight <- 600
 ##### highchart theme #####
 theme_cc <- hc_theme(
   colors = cc_colors,
+
   chart = list(
     backgroundColor = alabaster,
     style = list(
       fontFamily = cc_font, # font_subtitle
       color=alabaster)),
+
   title = list(widthAdjust = -50,
                style = list(
                  color = black,
@@ -46,6 +48,7 @@ theme_cc <- hc_theme(
                  textAlign="left",
                  fontSize='21px'),
                align = "left"),
+
   subtitle = list(
     style = list(
       color = black,
@@ -53,6 +56,7 @@ theme_cc <- hc_theme(
       fontWeight = regular_font_weight,
       fontSize='14px'),
     align='left'),
+
   caption = list(
     style = list(
       color = black,
@@ -97,9 +101,21 @@ theme_cc <- hc_theme(
       fontWeight = regular_font_weight,
       color = black,
       fontSize = '12px'),
-
     itemHoverStyle = list(
       fontFamily = cc_font, # font_table_text
       fontWeight = regular_font_weight,
       color = black),
-    plotLines=list(color=gainsboro)))
+    borderColor=gainsboro,
+    plotLines=list(color=gainsboro)),
+
+  bubbleLegend =  list(
+    borderColor=meteorite,
+    connectorColor=meteorite,
+    marker = list(
+      fillColor = lavender)),
+
+  plotOptions = list(
+    bubble=list(
+      marker=list(
+        fillColor=lavender,
+        lineColor=meteorite))))

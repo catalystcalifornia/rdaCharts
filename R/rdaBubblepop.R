@@ -119,25 +119,18 @@ rdaBubblepop <- function(
               verticalAlign="middle",
               width="12%",
               layout="vertical",
-              borderColor=gainsboro,
               borderWidth=1,
               borderRadius=5,
               itemMarginBottom=10,
               bubbleLegend =  list(enabled = TRUE,
                                    connectorDistance=20,
-                                   borderColor=meteorite,
-                                   connectorColor=meteorite,
                                    labels = list(
                                      format="{value:,.0f}",
-                                     style=list(fontSize='10px')),
-                                   marker = list(
-                                     fillColor = lavender))) %>%
+                                     style=list(fontSize='10px')))) %>%
 
     # Sets bar width
-    hc_plotOptions(series=list(pointWidth=2,
-                               marker=list(fillColor=lavender,
-                                           lineColor=meteorite,
-                                           fillOpacity=1),
+    hc_plotOptions(bubble=list(pointWidth=2,
+                               marker=list(fillOpacity=1),
                                states=list(inactive=list(opacity=1))), # disables transparency of bars when hovering over bubbles
                    spacingLeft=200) %>%
 
