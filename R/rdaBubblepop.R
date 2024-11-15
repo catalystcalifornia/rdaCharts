@@ -96,10 +96,9 @@ rdaBubblepop <- function(
                   invert=TRUE,
                   hcaes(x=!!rlang::ensym(x), y=!!rlang::ensym(y)),
                   showInLegend=FALSE,
-                  enableMouseTracking=FALSE,
+                  enableMouseTracking=FALSE, # disables tooltip from popping up when mouse moves over bars
                   pointWidth=2,
-                  marker=list(fillOpacity=1),
-                  states=list(inactive=list(opacity=1))) %>% # disables transparency of bars when hovering over bubbles) %>% # disables tooltip from popping up when mouse moves over bars
+                  states=list(inactive=list(opacity=1))) %>% # disables transparency of bars when hovering over bubbles)
 
     hc_add_series(df,
                   "bubble",
@@ -110,7 +109,8 @@ rdaBubblepop <- function(
                         size=!!rlang::ensym(z)),
                   maxSize="15%",
                   showInLegend=FALSE,
-                  clip=FALSE) %>%
+                  clip=FALSE,
+                  marker=list(fillOpacity=1)) %>%
 
     hc_xAxis(title = list(text = ""),
              type="category",
@@ -150,8 +150,7 @@ rdaBubblepop <- function(
     hc_add_theme(selected_theme) %>%
 
     hc_chart(inverted = T,
-             height = 480,
-             spacingLeft=200) %>%
+             height = 480) %>%
 
     hc_exporting(
       enabled = TRUE, sourceWidth=900, sourceHeight=600,
