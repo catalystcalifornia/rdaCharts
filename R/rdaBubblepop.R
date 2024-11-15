@@ -115,6 +115,7 @@ rdaBubblepop <- function(
                     lineWidth = 2)
                   ) %>%
 
+
     hc_xAxis(title = list(text = ""),
              type="category",
              categories=df$x,
