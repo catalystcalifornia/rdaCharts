@@ -123,7 +123,7 @@ rdaBubblepop <- function(
                   showInLegend=FALSE,
                   clip=FALSE,
                   states=list(inactive=list(opacity=1)),
-                  marker=list(lineWidth = 5,
+                  marker=list(lineWidth = 2,
                               fillOpacity = 1,
                               lineColor = line_color,
                               fillColor = fill_color
