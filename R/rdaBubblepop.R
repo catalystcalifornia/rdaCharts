@@ -122,7 +122,16 @@ rdaBubblepop <- function(
 
     hc_legend(title=list(text=paste0('<span style="color: #000000; font-weight: 400; font-size:10px;"><b>Line shows<br>    <i>the rate.</i></b><br><b>Bubble shows<br>    <i>total people.</i></b></span>')),
               enable = TRUE,
-              bubbleLegend =  list(enabled = TRUE)) %>%
+              align = "right",
+              verticalAlign="middle",
+              width="12%",
+              layout="vertical",
+              borderRadius=5,
+              itemMarginBottom=10,
+              bubbleLegend =  list(enabled = TRUE,
+                                   labels = list(
+                                     format="{value:,.0f}",
+                                     style=list(fontSize='10px')))) %>%
 
 
     hc_title(
