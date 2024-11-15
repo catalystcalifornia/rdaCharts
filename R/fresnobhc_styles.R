@@ -113,9 +113,7 @@ theme_fbhc <- hc_theme(
     "bubblePop" = list(
       color = community_safety,
       marker = list(
-        lineColor = primary_color,
-        lineWidth = 2,
-        fillOpacity = 1
+        lineColor = primary_color
       )
     ),
     "bubbleBar" = list(
