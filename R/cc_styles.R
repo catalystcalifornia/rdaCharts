@@ -116,8 +116,13 @@ theme_cc <- hc_theme(
 
   series = list(
     "bubblePop" = list(
-      fillColor = lavender,
-      lineColor = meteorite),
+      marker = list(
+        fillColor = lavender,
+        lineColor = meteorite,
+        lineWidth = 2,
+        fillOpacity = 1
+      )
+    ),
     "bubbleBar" = list(
       color = meteorite)
   )
