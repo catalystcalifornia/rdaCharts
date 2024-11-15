@@ -109,7 +109,11 @@ rdaBubblepop <- function(
                         size=!!rlang::ensym(z)),
                   maxSize="15%",
                   showInLegend=FALSE,
-                  clip=FALSE) %>%
+                  clip=FALSE,
+                  marker = list(
+                    lineWidth = 2,
+                    fillOpacity = 1
+                  )) %>%
 
     hc_xAxis(title = list(text = ""),
              type="category",
@@ -134,7 +138,6 @@ rdaBubblepop <- function(
                                    labels = list(
                                      format="{value:,.0f}",
                                      style=list(fontSize='10px')))) %>%
-
 
     hc_title(
       text = paste0(title),
