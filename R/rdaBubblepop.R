@@ -110,7 +110,6 @@ rdaBubblepop <- function(
                   maxSize="15%",
                   showInLegend=FALSE,
                   clip=FALSE,
-                  borderWidth = 2,
                   marker = list(
                     lineWidth = 2,
                     fillOpacity = 1
