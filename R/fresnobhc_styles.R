@@ -29,7 +29,7 @@ semi_bold_font_weight <- 600
 
 ##### highchart theme #####
 theme_fbhc <- hc_theme(
-  # colors = fbhc_colors,
+  colors = fbhc_colors,
 
   chart = list(
     backgroundColor = fbhc_white,
@@ -113,6 +113,7 @@ theme_fbhc <- hc_theme(
 
   series = list(
     "bubblePop" = list(
+      color = community_safety,
       marker = list(
         fillColor = community_safety,
         lineColor = primary_color,
