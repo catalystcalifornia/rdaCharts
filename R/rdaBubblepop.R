@@ -98,7 +98,7 @@ rdaBubblepop <- function(
                   showInLegend=FALSE,
                   enableMouseTracking=FALSE, # disables tooltip from popping up when mouse moves over bars
                   pointWidth=2,
-                  states=list(inactive=list(opacity=1))) %>% # disables transparency of bars when hovering over bubbles)
+                  states=list(inactive=list(opacity=1))) %>% # disables transparency of bars when hovering over bubbles
 
     hc_add_series(df,
                   "bubble",
@@ -109,7 +109,10 @@ rdaBubblepop <- function(
                         size=!!rlang::ensym(z)),
                   maxSize="15%",
                   showInLegend=FALSE,
-                  clip=FALSE) %>%
+                  clip=FALSE,
+                  states=list(inactive=list(opacity=1)),
+                  marker=list(lineWidth = 5,
+                              fillOpacity = 1)) %>%
 
     hc_xAxis(title = list(text = ""),
              type="category",
