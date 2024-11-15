@@ -113,7 +113,7 @@ theme_cc <- hc_theme(
     layout="vertical",
     borderWidth=1,
     borderRadius=5,
-    itemMarginBottom=10,),
+    itemMarginBottom=10),
 
   bubbleLegend =  list(
     borderColor=meteorite,
