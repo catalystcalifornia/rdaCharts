@@ -90,17 +90,25 @@ rdaBubblepop <- function(
                pointFormat = tooltip_text,
                useHTML=TRUE) %>%  # allows tooltip to read <br> html in reformatted tooltip_text
 
-    hc_add_series(df, "bar", invert=TRUE,
+    hc_add_series(df,
+                  "bar",
+                  name = "bubbleBar",
+                  invert=TRUE,
                   hcaes(x=!!rlang::ensym(x), y=!!rlang::ensym(y)),
                   showInLegend=FALSE,
-                  enableMouseTracking=FALSE)%>% # disables tooltip from popping up when mouse moves over bars
+                  enableMouseTracking=FALSE,
+                  pointWidth=2,
+                  marker=list(fillOpacity=1),
+                  states=list(inactive=list(opacity=1))) %>% # disables transparency of bars when hovering over bubbles) %>% # disables tooltip from popping up when mouse moves over bars
 
-    hc_add_series(df, "bubble", invert=TRUE,
+    hc_add_series(df,
+                  "bubble",
+                  name = "bubblePop",
+                  invert=TRUE,
                   hcaes(x=!!rlang::ensym(x),
                         y=!!rlang::ensym(y),
                         size=!!rlang::ensym(z)),
                   maxSize="15%",
-                  # tooltip =  list(pointFormat = formatted_tooltip),
                   showInLegend=FALSE,
                   clip=FALSE) %>%
 
@@ -128,13 +136,7 @@ rdaBubblepop <- function(
                                      format="{value:,.0f}",
                                      style=list(fontSize='10px')))) %>%
 
-    # Sets bar width
-    hc_plotOptions(bubble=list(pointWidth=2,
-                               marker=list(fillOpacity=1),
-                               states=list(inactive=list(opacity=1))), # disables transparency of bars when hovering over bubbles
-                   spacingLeft=200) %>%
 
-    # title elements
     hc_title(
       text = paste0(title),
       style = list(useHTML = TRUE)) %>%
@@ -143,13 +145,13 @@ rdaBubblepop <- function(
 
     hc_caption(
       text = caption,
-      useHTML=TRUE
-    ) %>%
+      useHTML=TRUE) %>%
 
     hc_add_theme(selected_theme) %>%
 
     hc_chart(inverted = T,
-             height = 480) %>%
+             height = 480,
+             spacingLeft=200) %>%
 
     hc_exporting(
       enabled = TRUE, sourceWidth=900, sourceHeight=600,

@@ -96,12 +96,12 @@ theme_fbhc <- hc_theme(
     itemStyle = list(
       fontFamily = fbhc_body_font,
       fontWeight = regular_font_weight,
-      color = black,
+      color = fbhc_black,
       fontSize = '12px'),
     itemHoverStyle = list(
       fontFamily = fbhc_body_font,
       fontWeight = regular_font_weight,
-      color = black),
+      color = fbhc_black),
     borderColor=fbhc_grey,
     plotLines=list(color=fbhc_grey)),
 
@@ -111,8 +111,14 @@ theme_fbhc <- hc_theme(
     marker = list(
       fillColor = community_safety)),
 
-  plotOptions = list(
-    bubble=list(
+  series = list(
+    "bubblePop" = list(
+      color = primary_color,
       marker=list(
         fillColor=community_safety,
-        lineColor=primary_color))))
+        lineColor=primary_color)),
+    "bubbleBar" = list(
+      color = primary_color))
+
+  )
+
