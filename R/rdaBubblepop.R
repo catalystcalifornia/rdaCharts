@@ -109,10 +109,7 @@ rdaBubblepop <- function(
                         size=!!rlang::ensym(z)),
                   maxSize="15%",
                   showInLegend=FALSE,
-                  clip=FALSE,
-                  marker=list(
-                    fillOpacity = 1,
-                    lineWidth = 2)) %>%
+                  clip=FALSE) %>%
 
     hc_xAxis(title = list(text = ""),
              type="category",
@@ -125,18 +122,7 @@ rdaBubblepop <- function(
 
     hc_legend(title=list(text=paste0('<span style="color: #000000; font-weight: 400; font-size:10px;"><b>Line shows<br>    <i>the rate.</i></b><br><b>Bubble shows<br>    <i>total people.</i></b></span>')),
               enable = TRUE,
-              align = "right",
-              verticalAlign="middle",
-              width="12%",
-              layout="vertical",
-              borderWidth=1,
-              borderRadius=5,
-              itemMarginBottom=10,
-              bubbleLegend =  list(enabled = TRUE,
-                                   connectorDistance=20,
-                                   labels = list(
-                                     format="{value:,.0f}",
-                                     style=list(fontSize='10px')))) %>%
+              bubbleLegend =  list(enabled = TRUE)) %>%
 
 
     hc_title(
