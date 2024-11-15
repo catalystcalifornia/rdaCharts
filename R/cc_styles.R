@@ -32,7 +32,7 @@ semi_bold_font_weight <- 600
 
 ##### highchart theme #####
 theme_cc <- hc_theme(
-  colors = cc_colors,
+  # colors = cc_colors,
 
   chart = list(
     backgroundColor = alabaster,
