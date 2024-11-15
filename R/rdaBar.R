@@ -67,11 +67,9 @@ rdaBar <- function(
   }
 
   ##### Chart function #####
-  df <-  df %>%
-
-  hchart(df,
-         "bar",
-         hcaes(x = !!rlang::ensym(x), y = !!rlang::ensym(y))) %>%
+  df <- hchart(df,
+               "bar",
+               hcaes(x = !!rlang::ensym(x), y = !!rlang::ensym(y))) %>%
 
     hc_tooltip(headerFormat='', # removes series label from top of tooltip
                pointFormat = tooltip_text,
