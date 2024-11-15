@@ -76,15 +76,27 @@ rdaBubblepop <- function(
 
   }
 
-
-  ##### Chart function #####
   yaxis_label_JS <- paste0("function() {
         	return this.value +", yaxis_label, "}")
 
-  df <-  df %>%
-    arrange(desc(y))
+  # set bubble styling for a given theme
+  if (theme == "theme_cc") {
+    fill_color <- lavender
+    line_color <- meteorite
+    bar_color <- meteorite
+  }
 
-  highchart() %>%
+  if (theme == "theme_fbhc") {
+    fill_color <- community_safety
+    line_color <- primary_color
+    bar_color <- primary_color
+  }
+
+  ##### Chart function #####
+
+
+  df <-  df %>%
+    highchart() %>%
 
     hc_tooltip(headerFormat='', # removes series label from top of tooltip
                pointFormat = tooltip_text,
@@ -98,7 +110,8 @@ rdaBubblepop <- function(
                   showInLegend=FALSE,
                   enableMouseTracking=FALSE, # disables tooltip from popping up when mouse moves over bars
                   pointWidth=2,
-                  states=list(inactive=list(opacity=1))) %>% # disables transparency of bars when hovering over bubbles
+                  states=list(inactive=list(opacity=1)),
+                  color=bar_color) %>% # disables transparency of bars when hovering over bubbles
 
     hc_add_series(df,
                   "bubble",
@@ -112,7 +125,10 @@ rdaBubblepop <- function(
                   clip=FALSE,
                   states=list(inactive=list(opacity=1)),
                   marker=list(lineWidth = 5,
-                              fillOpacity = 1)) %>%
+                              fillOpacity = 1,
+                              lineColor = line_color,
+                              fillColor = fill_color
+                              )) %>%
 
     hc_xAxis(title = list(text = ""),
              type="category",
