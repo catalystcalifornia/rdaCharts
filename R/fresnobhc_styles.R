@@ -108,14 +108,13 @@ theme_fbhc <- hc_theme(
   bubbleLegend =  list(
     borderColor=primary_color,
     connectorColor=primary_color,
-    marker = list(
-      fillColor = community_safety)),
+    borderWidth=2,
+    color=community_safety),
 
   series = list(
     "bubblePop" = list(
       color = community_safety,
       marker = list(
-        fillColor = community_safety,
         lineColor = primary_color,
         lineWidth = 2,
         fillOpacity = 1

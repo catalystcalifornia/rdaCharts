@@ -112,9 +112,7 @@ rdaBubblepop <- function(
                   clip=FALSE,
                   marker=list(
                     fillOpacity = 1,
-                    lineWidth = 2)
-                  ) %>%
-
+                    lineWidth = 2)) %>%
 
     hc_xAxis(title = list(text = ""),
              type="category",
