@@ -111,7 +111,7 @@ theme_fbhc <- hc_theme(
     marker = list(
       fillColor = community_safety)),
 
-  plotOptions(
+  plotOptions = list(
     bubble=list(
       marker=list(
         fillColor=community_safety,

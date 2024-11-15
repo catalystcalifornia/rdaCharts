@@ -114,7 +114,7 @@ theme_cc <- hc_theme(
     marker = list(
       fillColor = lavender)),
 
-  plotOptions(
+  plotOptions = list(
     bubble=list(
       marker=list(
         fillColor=lavender,
