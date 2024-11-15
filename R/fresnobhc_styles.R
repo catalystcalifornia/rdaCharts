@@ -103,13 +103,24 @@ theme_fbhc <- hc_theme(
       fontWeight = regular_font_weight,
       color = fbhc_black),
     borderColor=fbhc_grey,
-    plotLines=list(color=fbhc_grey)),
+    plotLines=list(color=fbhc_grey),
+    align = "right",
+    verticalAlign="middle",
+    width="12%",
+    layout="vertical",
+    borderWidth=1,
+    borderRadius=5,
+    itemMarginBottom=10),
 
   bubbleLegend =  list(
     borderColor=primary_color,
     connectorColor=primary_color,
     borderWidth=2,
-    color=community_safety),
+    color=community_safety,
+    connectorDistance=20,
+    labels = list(
+      format="{value:,.0f}",
+      style=list(fontSize='10px'))),
 
   series = list(
     "bubblePop" = list(
