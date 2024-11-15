@@ -112,6 +112,7 @@ theme_fbhc <- hc_theme(
   series = list(
     "bubblePop" = list(
       color = community_safety,
+      borderColor = primary_color,
       marker = list(
         lineColor = primary_color
       )
