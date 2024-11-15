@@ -107,23 +107,12 @@ theme_cc <- hc_theme(
       color = black),
     borderColor=gainsboro,
     plotLines=list(color=gainsboro),
-    align = "right",
-    verticalAlign="middle",
-    width="12%",
-    layout="vertical",
-    borderWidth=1,
-    borderRadius=5,
-    itemMarginBottom=10),
-
-  bubbleLegend =  list(
-    borderColor=meteorite,
-    connectorColor=meteorite,
-    borderWidth=2,
-    color=lavender,
-    connectorDistance=20,
-    labels = list(
-      format="{value:,.0f}",
-      style=list(fontSize='10px'))),
+    bubbleLegend =  list(
+      borderColor=meteorite,
+      connectorColor=meteorite,
+      borderWidth=2,
+      color=lavender,
+      connectorDistance=20)),
 
   series = list(
     "bubblePop" = list(
