@@ -95,7 +95,6 @@ rdaBubblepop <- function(
   ##### Chart function #####
 
 
-  df <-  df %>%
     highchart() %>%
 
     hc_tooltip(headerFormat='', # removes series label from top of tooltip
