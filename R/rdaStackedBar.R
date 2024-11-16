@@ -76,15 +76,15 @@ rdaStackedBar <- function(
   # if no bar_colors provided
   if (length(bar_colors)==0) {
     # Provide a default list using CC colors - if selected theme is theme_cc
-    if (selected_theme == "theme_cc") {
+    if (theme == "theme_cc") {
       bar_colors <- cc_colors
     }
     # Provide a default list using FBHC colors - if selected theme is theme_fbhc
-    if (selected_theme == "theme_fbhc") {
+    if (theme == "theme_fbhc") {
       bar_colors <- fbhc_colors
     }
     # Provide a list of colors based on the theme provided (if not pre-defined in rdaCharts)
-    if (selected_theme != "theme_fbhc" & selected_theme != "theme_cc") {
+    if (theme != "theme_fbhc" & selected_theme != "theme_cc") {
       bar_colors <- selected_theme$hc_colors
     }
 
