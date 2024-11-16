@@ -95,7 +95,7 @@ rdaBubblepop <- function(
   ##### Chart function #####
 
 
-    highchart() %>%
+    result <- highchart() %>%
 
     hc_tooltip(headerFormat='', # removes series label from top of tooltip
                pointFormat = tooltip_text,
@@ -178,4 +178,8 @@ rdaBubblepop <- function(
       filename = paste0(subtitle,"_Catalyst California, catalystcalifornia.org, 2023."),
       buttons=list(contextButton=list(menuItems=list('downloadPNG', 'downloadSVG',
                                                      'downloadXLS', 'downloadCSV')))
-    )}
+    )
+
+  return(result)
+
+  }

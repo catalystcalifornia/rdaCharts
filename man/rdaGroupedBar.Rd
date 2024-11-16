@@ -9,7 +9,7 @@ rdaGroupedBar(
   x,
   y,
   z,
-  bar_colors = list(meteorite, lavender, peridot, papaya, ccblue, black, gainsboro),
+  bar_colors = list(),
   theme = "theme_cc",
   title = "",
   subtitle = "",

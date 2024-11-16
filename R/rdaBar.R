@@ -67,7 +67,7 @@ rdaBar <- function(
   }
 
   ##### Chart function #####
-  df <- hchart(df,
+  result <- hchart(df,
                "bar",
                hcaes(x = !!rlang::ensym(x), y = !!rlang::ensym(y))) %>%
 
@@ -109,5 +109,7 @@ rdaBar <- function(
       filename = paste0(subtitle,"_Catalyst California, catalystcalifornia.org, 2023."),
       buttons=list(contextButton=list(menuItems=list('downloadPNG', 'downloadSVG',
                                                      'downloadXLS', 'downloadCSV'))))
+
+  return(result)
 
   }

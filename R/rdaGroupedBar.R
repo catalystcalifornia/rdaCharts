@@ -37,7 +37,7 @@ rdaGroupedBar <- function(
     x, # independent variable
     y, # dependent variable
     z, # grouping variable
-    bar_colors=list(meteorite, lavender, peridot, papaya, ccblue, black, gainsboro),
+    bar_colors=list(),
     theme="theme_cc",
     title="", # chart title
     subtitle="",
@@ -74,15 +74,32 @@ rdaGroupedBar <- function(
 
   }
 
+  # set bar styling for a given theme
+  # if no bar_colors provided
+  if (length(bar_colors)==0) {
+    # Provide a default list using CC colors - if selected theme is theme_cc
+    if (selected_theme == "theme_cc") {
+      bar_colors <- cc_colors
+    }
+    # Provide a default list using FBHC colors - if selected theme is theme_fbhc
+    if (selected_theme == "theme_fbhc") {
+      bar_colors <- fbhc_colors
+    }
+    # Provide a list of colors based on the theme provided (if not pre-defined in rdaCharts)
+    if (selected_theme != "theme_fbhc" & selected_theme != "theme_cc") {
+      bar_colors <- selected_theme$hc_colors
+    }
+
+    warning("No list provided to bar_colors argument - defaulting to color scheme based on selected theme. If no theme selected, returns grey shades.")
+  }
+
+  if (length(bar_colors)==0) {
+    bar_colors <- list("#dddee2", "#acadb1", "#7e7f82", "#525357", "#2b2b2e")
+
+  }
+
 
   ##### Chart function #####
-
-  # Notes for documentation
-  # df should be sorted before using the function - usually we sort on the y variable, but this can differ by project
-  # df <-  df %>%
-  #   arrange(desc(y))
-
-
 
   result <- hchart(df,
                    'bar',
