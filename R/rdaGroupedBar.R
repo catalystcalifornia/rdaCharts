@@ -86,7 +86,7 @@ rdaGroupedBar <- function(
       bar_colors <- fbhc_colors
     }
     # Provide a list of colors based on the theme provided (if not pre-defined in rdaCharts)
-    if (theme != "theme_fbhc" & selected_theme != "theme_cc") {
+    if (theme != "theme_fbhc" & theme != "theme_cc") {
       bar_colors <- selected_theme$hc_colors
     }
 
