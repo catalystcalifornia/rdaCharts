@@ -71,6 +71,7 @@ rdaBar <- function(
 
     hc_add_series(df,
                "bar",
+               name="",
                hcaes(x = !!rlang::ensym(x),
                      y = !!rlang::ensym(y))) %>%
 
@@ -91,10 +92,6 @@ rdaBar <- function(
                           labels=list(position="bottom",
                                       style=list(fontSize="12px"))),
              type = "category") %>%
-
-    hc_legend(enabled = TRUE,
-              reversed =  TRUE,
-              x=20) %>%
 
     hc_add_theme(selected_theme) %>%
 
