@@ -89,7 +89,8 @@ rdaBar <- function(
 
     hc_xAxis(title = list(text = paste0(""),
                           labels=list(position="bottom",
-                                      style=list(fontSize="12px")))) %>%
+                                      style=list(fontSize="12px"))),
+             type = "category") %>%
 
     hc_legend(enabled = TRUE,
               reversed =  TRUE,
