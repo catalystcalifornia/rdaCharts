@@ -128,11 +128,11 @@ rdaStackedBar <- function(
 
     hc_caption(text = caption) %>%
 
-    hc_yAxis(title = list(text = ""),
-             max = yaxis_flag) %>%
+    hc_yAxis(title = list(text = "")) %>%
 
     hc_xAxis(title = list(text = "",
-                          labels=list(position="bottom"))) %>%
+                          labels=list(position="bottom")),
+             max = yaxis_flag) %>%
 
     hc_legend(enabled = TRUE,
               reversed =  TRUE,
