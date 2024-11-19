@@ -92,6 +92,12 @@ rdaBubblepop <- function(
     bar_color <- primary_color
   }
 
+  # add RIPA flag to update bubblepop legend
+  ripa_flag <- ""
+  if (grepl("Police", caption, ignore.case=TRUE) == TRUE) {
+    ripa_flag <- " stopped"
+  }
+
   ##### Chart function #####
 
 
@@ -138,7 +144,10 @@ rdaBubblepop <- function(
              labels = list(formatter = JS(yaxis_label_JS),
                            style=list(fontSize="12px")))  %>%
 
-    hc_legend(title=list(text=paste0('<span style="color: #000000; font-weight: 400; font-size:10px;"><b>Line shows<br>    <i>the rate.</i></b><br><b>Bubble shows<br>    <i>total people.</i></b></span>')),
+    hc_legend(title=list(
+      text=paste0("<span style='color: #000000; font-weight: 400; font-size:10px;'>",
+                  "<b>Line shows<br><i>the rate.</i></b><br>",
+                  "<b>Bubble shows<br><i>total people", ripa_flag,".</i></b></span>")),
               enable = TRUE,
               align = "right",
               verticalAlign="middle",
@@ -169,13 +178,15 @@ rdaBubblepop <- function(
              height = 480) %>%
 
     hc_exporting(
-      enabled = TRUE, sourceWidth=900, sourceHeight=600,
+      enabled = TRUE,
+      sourceWidth=900,
+      sourceHeight=600,
       chartOptions=list(plotOptions=list(
         series=list(
           dataLabels=list(
             enabled=TRUE,
             format=paste0(export_data_label))))),
-      filename = paste0(subtitle,"_Catalyst California, catalystcalifornia.org, 2023."),
+      filename = paste0(subtitle,"_Catalyst California, catalystcalifornia.org, ", format(Sys.Date(), "%Y"), "."),
       buttons=list(contextButton=list(menuItems=list('downloadPNG', 'downloadSVG',
                                                      'downloadXLS', 'downloadCSV')))
     )

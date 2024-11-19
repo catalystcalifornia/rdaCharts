@@ -101,12 +101,14 @@ rdaGroupedBar <- function(
 
   ##### Chart function #####
 
-  result <- hchart(df,
-                   'bar',
-                   hcaes(
-                     x = !!rlang::ensym(x),
-                     y = !!rlang::ensym(y),
-                     group = !!rlang::ensym(z))) %>%
+  result <- highchart() %>%
+
+    hc_add_series(df,
+                  'bar',
+                  hcaes(
+                    x = !!rlang::ensym(x),
+                    y = !!rlang::ensym(y),
+                    group = !!rlang::ensym(z))) %>%
 
     hc_tooltip(headerFormat='', # removes series label from top of tooltip
                pointFormat = tooltip_text,
@@ -133,19 +135,19 @@ rdaGroupedBar <- function(
     hc_chart(marginRight=120,
              height=480) %>%
 
-    hc_exporting(enabled = TRUE,
-                 sourceWidth=900,
-                 sourceHeight=600,
-                 chartOptions=list(
-                   plotOptions=list(
-                     series=list(
-                       dataLabels=list(
-                         enabled=TRUE,
-                         format=export_data_label)))),
-                 filename = paste0(subtitle,"_Catalyst California, catalystcalifornia.org, 2023."),
-                 buttons=list(
-                   contextButton=list(
-                     menuItems=list('downloadPNG', 'downloadSVG', 'downloadXLS', 'downloadCSV'))))
+    hc_exporting(
+      enabled = TRUE,
+      sourceWidth=900,
+      sourceHeight=600,
+      chartOptions=list(plotOptions=list(
+        series=list(
+          dataLabels=list(
+            enabled=TRUE,
+            format=paste0(export_data_label))))),
+      filename = paste0(subtitle,"_Catalyst California, catalystcalifornia.org, ", format(Sys.Date(), "%Y"), "."),
+      buttons=list(contextButton=list(menuItems=list('downloadPNG', 'downloadSVG',
+                                                     'downloadXLS', 'downloadCSV')))
+    )
 
   return(result)
 }
