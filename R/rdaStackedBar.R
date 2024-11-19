@@ -96,6 +96,14 @@ rdaStackedBar <- function(
 
   }
 
+  # set flag to set max y-axis at 100 when the y-variable is a % and sums to 100
+  yaxis_flag <- NULL
+  y_sum <- sum(df[["y"]], na.rm = TRUE)
+
+  if (grepl("%", export_data_label[[1]])==TRUE & y_sum == 100) {
+    yaxis_flag <- 100
+  }
+
   ##### Chart function #####
 
   result <- hchart(df,
@@ -118,7 +126,8 @@ rdaStackedBar <- function(
 
     hc_caption(text = caption) %>%
 
-    hc_yAxis(title = list(text = "")) %>%
+    hc_yAxis(title = list(text = ""),
+             max = yaxis_flag) %>%
 
     hc_xAxis(title = list(text = "",
                           labels=list(position="bottom"))) %>%
