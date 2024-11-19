@@ -178,13 +178,15 @@ rdaBubblepop <- function(
              height = 480) %>%
 
     hc_exporting(
-      enabled = TRUE, sourceWidth=900, sourceHeight=600,
+      enabled = TRUE,
+      sourceWidth=900,
+      sourceHeight=600,
       chartOptions=list(plotOptions=list(
         series=list(
           dataLabels=list(
             enabled=TRUE,
             format=paste0(export_data_label))))),
-      filename = paste0(subtitle,"_Catalyst California, catalystcalifornia.org, 2023."),
+      filename = paste0(subtitle,"_Catalyst California, catalystcalifornia.org, ", format(Sys.Date(), "%Y"), "."),
       buttons=list(contextButton=list(menuItems=list('downloadPNG', 'downloadSVG',
                                                      'downloadXLS', 'downloadCSV')))
     )
