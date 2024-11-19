@@ -101,12 +101,14 @@ rdaGroupedBar <- function(
 
   ##### Chart function #####
 
-  result <- hchart(df,
-                   'bar',
-                   hcaes(
-                     x = !!rlang::ensym(x),
-                     y = !!rlang::ensym(y),
-                     group = !!rlang::ensym(z))) %>%
+  result <- highchart() %>%
+
+    hc_add_series(df,
+                  'bar',
+                  hcaes(
+                    x = !!rlang::ensym(x),
+                    y = !!rlang::ensym(y),
+                    group = !!rlang::ensym(z))) %>%
 
     hc_tooltip(headerFormat='', # removes series label from top of tooltip
                pointFormat = tooltip_text,

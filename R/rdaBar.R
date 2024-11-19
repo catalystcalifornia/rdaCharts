@@ -67,7 +67,9 @@ rdaBar <- function(
   }
 
   ##### Chart function #####
-  result <- hchart(df,
+  result <- highchart() %>%
+
+    hc_add_series(df,
                "bar",
                hcaes(x = !!rlang::ensym(x),
                      y = !!rlang::ensym(y))) %>%
