@@ -1,16 +1,12 @@
 library(highcharter)
 
 ## COLORS ##
-# Fresno BHC
+# Fresno BHC Recommended colors and colors ramps for data analysis
 primary_color <- "#053451"
 community_safety <- "#FDB913"
 primary_color_gradienct <- c("#B4D5FA", "#88ADD0", "#5D85A6", "#315C7B", "#053451")
 community_safety_gradient <- c("#FFE8B3", "#FFDC8B", "#FED163", "#FEC53B", "#FDB913")
 divergent_color_gradient <- c("#053451", "#2E4A47", "#58603C", "#817732", "#AA8D28", "#D4A31D", "#FDB913")
-
-
-
-fbhc_colors <- c(community_safety, primary_color, fbhc_grey_gradient, fbhc_black, primary_color_gradienct, community_safety_gradient, divergent_color_gradient)
 
 # Neutrals
 fbhc_black <- "#0A0A0A"
@@ -18,7 +14,8 @@ fbhc_white <-"#FFFFFF"
 fbhc_grey <- "#DDDEE2"
 fbhc_grey_gradient <- c("#DDDEE2", "#BABBBF", "#98999D", "#75767A", "#525357")
 
-# Fresno BHC Recommended colors and colors ramps for data analysis
+# add colors to list for hc_theme
+fbhc_colors <- c(community_safety, primary_color, fbhc_grey_gradient, fbhc_black, primary_color_gradienct, community_safety_gradient, divergent_color_gradient)
 
 
 ## FONTS ##
