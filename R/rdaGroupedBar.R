@@ -125,7 +125,8 @@ rdaGroupedBar <- function(
     hc_yAxis(title = list(text = "")) %>%
 
     hc_xAxis(title = list(text = ""),
-             labels = list(position="bottom")) %>%
+             labels = list(position="bottom"),
+             type = "category") %>%
 
     hc_legend(enabled = TRUE,
               x = 20)%>%
