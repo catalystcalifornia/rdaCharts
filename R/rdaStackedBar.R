@@ -100,6 +100,10 @@ rdaStackedBar <- function(
   yaxis_flag <- NULL
   y_sum <- sum(df[[y]], na.rm = TRUE)
 
+  print(paste("y_sum:", y_sum))
+  print(paste("Contains %:", any(grepl("%", unlist(export_data_label)))))
+  print(paste("Condition met:", any(grepl("%", unlist(export_data_label))) & y_sum == 100))
+
   if (any(grepl("%", unlist(export_data_label))) & y_sum == 100) {
     yaxis_flag <- 100
     warning("Detected y variable as % that sums to 100 - capping max y-axis value at 100.")
