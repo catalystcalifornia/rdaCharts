@@ -138,7 +138,9 @@ rdaBubblepop <- function(
     hc_xAxis(title = list(text = ""),
              type="category",
              categories=df$x,
-             labels=list(style=list(fontSize="12px"))) %>%
+             labels=list(style=list(fontSize="12px")),
+             startOnTick = TRUE,  # Force start at first tick
+             min = 0) %>%             # Explicitly set minimum
 
     hc_yAxis(title = list(text = ""),
              labels = list(formatter = JS(yaxis_label_JS),
