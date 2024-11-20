@@ -124,7 +124,8 @@ rdaStackedBar <- function(
 
     hc_colors(bar_colors)%>%
 
-    hc_title(text = title) %>%
+    hc_title(text=title,
+             style = list(useHTML = TRUE)) %>%
 
     hc_subtitle(text = subtitle) %>%
 

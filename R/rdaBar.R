@@ -79,7 +79,8 @@ rdaBar <- function(
                pointFormat = tooltip_text,
                useHTML=TRUE) %>%  # allows tooltip to read <br> html in reformatted tooltip_text
 
-    hc_title(text = title) %>%
+    hc_title(text = title,
+             style = list(useHTML = TRUE)) %>%
 
     hc_subtitle(text = subtitle) %>%
 
