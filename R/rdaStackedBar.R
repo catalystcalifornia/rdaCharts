@@ -102,6 +102,7 @@ rdaStackedBar <- function(
 
   if (grepl("%", export_data_label[[1]])==TRUE & y_sum == 100) {
     yaxis_flag <- 100
+    warning("Detected y variable as % that sums to 100 - capping max y-axis value at 100.")
   }
 
   ##### Chart function #####
