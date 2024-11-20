@@ -93,6 +93,8 @@ rdaBar <- function(
                                       style=list(fontSize="12px"))),
              type = "category") %>%
 
+    hc_legend(enabled=FALSE) %>%
+
     hc_add_theme(selected_theme) %>%
 
     hc_chart(marginRight=120) %>%
