@@ -59,7 +59,7 @@ theme_fbhc <- hc_theme(
       color = fbhc_black,
       fontFamily = fbhc_body_font,
       fontWeight = regular_font_weight,
-      fontSize = "10px",
+      fontSize = "14px",
       textAlign = "left",
       width = 50),
     useHTML = TRUE,
@@ -73,7 +73,7 @@ theme_fbhc <- hc_theme(
         fontWeight = semi_bold_font_weight,
         width=120,  #argument to modify the width of the labels
         min=0,
-        fontSize="10px")),
+        fontSize="14px")),
     lineColor=fbhc_grey),
 
   yAxis=list(
@@ -82,7 +82,7 @@ theme_fbhc <- hc_theme(
         color=fbhc_black,
         fontFamily = fbhc_body_font,
         fontWeight = regular_font_weight,
-        fontSize="10px",
+        fontSize="14px",
         margin = 50)),
     gridLineWidth=0, # removes vertical grid lines
     visible=TRUE, # makes axis line visible
@@ -97,7 +97,7 @@ theme_fbhc <- hc_theme(
       fontFamily = fbhc_body_font,
       fontWeight = regular_font_weight,
       color = fbhc_black,
-      fontSize = '12px'),
+      fontSize = '14px'),
     itemHoverStyle = list(
       fontFamily = fbhc_body_font,
       fontWeight = regular_font_weight,

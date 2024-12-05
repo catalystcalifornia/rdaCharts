@@ -138,7 +138,6 @@ rdaBubblepop <- function(
     hc_xAxis(title = list(text = ""),
              type="category",
              categories=df$x,
-             labels=list(style=list(fontSize="12px")),
              startOnTick = TRUE,  # Force start at first tick
              min = 0) %>%             # Explicitly set minimum
 
@@ -147,7 +146,7 @@ rdaBubblepop <- function(
                            style=list(fontSize="12px")))  %>%
 
     hc_legend(title=list(
-      text=paste0("<span style='color: #000000; font-weight: 400; font-size:10px;'>",
+      text=paste0("<span style='color: #000000; font-weight: 400;'>",
                   "<b>Line shows<br><i>the rate.</i></b><br>",
                   "<b>Bubble shows<br><i>total people", ripa_flag,".</i></b></span>")),
               enable = TRUE,
@@ -162,7 +161,7 @@ rdaBubblepop <- function(
                                    connectorDistance=20,
                                    labels = list(
                                      format="{value:,.0f}",
-                                     style=list(fontSize='10px')))) %>%
+                                     style=list(fontSize='14px')))) %>%
 
     hc_title(
       text = paste0(title),

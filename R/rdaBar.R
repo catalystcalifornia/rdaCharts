@@ -86,12 +86,10 @@ rdaBar <- function(
 
     hc_caption(text = caption) %>%
 
-    hc_yAxis(title = list(text = paste0(""),
-                          labels = list(style=list(fontSize="12px")))) %>%
+    hc_yAxis(title = list(text = paste0(""))) %>%
 
     hc_xAxis(title = list(text = paste0(""),
-                          labels=list(position="bottom",
-                                      style=list(fontSize="12px"))),
+                          labels=list(position="bottom")),
              type = "category") %>%
 
     hc_legend(enabled=FALSE) %>%
