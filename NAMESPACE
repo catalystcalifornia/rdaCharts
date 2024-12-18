@@ -3,6 +3,7 @@
 export(get_themes)
 export(rdaBar)
 export(rdaBubblepop)
+export(rdaBubblepop_test)
 export(rdaGroupedBar)
 export(rdaStackedBar)
 import(dplyr)
