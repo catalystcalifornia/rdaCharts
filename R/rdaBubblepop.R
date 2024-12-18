@@ -100,98 +100,194 @@ rdaBubblepop <- function(
 
   ##### Chart function #####
 
-
-    result <- highchart() %>%
-
-    hc_tooltip(headerFormat='', # removes series label from top of tooltip
+  result <- highchart() %>%
+    hc_tooltip(headerFormat = '',
                pointFormat = tooltip_text,
-               useHTML=TRUE) %>%  # allows tooltip to read <br> html in reformatted tooltip_text
-
+               useHTML = TRUE,
+               style = list(fontSize = "14px")) %>%
     hc_add_series(df,
                   "bar",
                   name = "bubbleBar",
-                  invert=TRUE,
-                  hcaes(x=!!rlang::ensym(x), y=!!rlang::ensym(y)),
-                  showInLegend=FALSE,
-                  enableMouseTracking=FALSE, # disables tooltip from popping up when mouse moves over bars
-                  pointWidth=2,
-                  states=list(inactive=list(opacity=1)),
-                  color=bar_color) %>% # disables transparency of bars when hovering over bubbles
-
+                  invert = TRUE,
+                  hcaes(x = !!rlang::ensym(x), y = !!rlang::ensym(y)),
+                  showInLegend = FALSE,
+                  enableMouseTracking = FALSE,
+                  pointWidth = 2,
+                  states = list(inactive = list(opacity = 1)),
+                  color = bar_color) %>%
     hc_add_series(df,
                   "bubble",
                   name = "bubblePop",
-                  invert=TRUE,
-                  hcaes(x=!!rlang::ensym(x),
-                        y=!!rlang::ensym(y),
-                        size=!!rlang::ensym(z)),
-                  maxSize="15%",
-                  showInLegend=FALSE,
-                  clip=FALSE,
-                  states=list(inactive=list(opacity=1)),
-                  marker=list(lineWidth = 2,
-                              fillOpacity = 1,
-                              lineColor = line_color,
-                              fillColor = fill_color
-                              )) %>%
-
-    hc_xAxis(title = list(text = ""),
-             type="category",
-             categories=df$x,
-             startOnTick = TRUE,  # Force start at first tick
-             min = 0) %>%             # Explicitly set minimum
-
-    hc_yAxis(title = list(text = ""),
-             labels = list(formatter = JS(yaxis_label_JS),
-                           style=list(fontSize="12px")))  %>%
-
-    hc_legend(title=list(
-      text=paste0("<span style='color: #000000; font-weight: 400;'>",
-                  "<b>Line shows<br><i>the rate.</i></b><br>",
-                  "<b>Bubble shows<br><i>total people", ripa_flag,".</i></b></span>")),
-              enable = TRUE,
-              align = "right",
-              verticalAlign="middle",
-              width="12%",
-              layout="vertical",
-              borderWidth=1,
-              borderRadius=5,
-              itemMarginBottom=10,
-              bubbleLegend =  list(enabled = TRUE,
-                                   connectorDistance=20,
-                                   labels = list(
-                                     format="{value:,.0f}",
-                                     style=list(fontSize='14px')))) %>%
-
+                  invert = TRUE,
+                  hcaes(x = !!rlang::ensym(x),
+                        y = !!rlang::ensym(y),
+                        size = !!rlang::ensym(z)),
+                  maxSize = "10%",
+                  showInLegend = FALSE,
+                  clip = FALSE,
+                  states = list(inactive = list(opacity = 1)),
+                  marker = list(
+                    lineWidth = 2,
+                    fillOpacity = 1,
+                    lineColor = line_color,
+                    fillColor = fill_color
+                  )) %>%
+    hc_xAxis(
+      title = list(text = ""),
+      type = "category",
+      categories = df$x,
+      startOnTick = TRUE,
+      min = 0,
+      labels = list(
+        style = list(
+          fontSize = "14px",
+          textOverflow = "ellipsis"
+        ),
+        overflow = "justify"
+      )
+    ) %>%
+    hc_yAxis(
+      title = list(text = ""),
+      labels = list(
+        formatter = JS(yaxis_label_JS),
+        style = list(fontSize = "14px")
+      )
+    ) %>%
+    hc_legend(
+      title = list(
+        text = paste0(
+          "<span style='color: #000000; font-weight: 400;'>",
+          "<b>Line shows<br><i>the rate.</i></b><br>",
+          "<b>Bubble shows<br><i>total people", ripa_flag, ".</i></b></span>"
+        ),
+        style = list(fontSize = "14px")
+      ),
+      enable = TRUE,
+      align = "right",
+      verticalAlign = "middle",
+      width = "12%",
+      layout = "horizontal",
+      borderWidth = 1,
+      borderRadius = 5,
+      itemMarginBottom = 10,
+      itemStyle = list(fontSize = "14px"),
+      bubbleLegend = list(
+        enabled = TRUE,
+        connectorDistance = 20,
+        labels = list(
+          format = "{value:,.0f}",
+          style = list(fontSize = "14px")
+        ))) %>%
     hc_title(
       text = paste0(title),
-      style = list(useHTML = TRUE)) %>%
-
-    hc_subtitle(text = paste0(subtitle)) %>%
-
+      style = list(
+        useHTML = TRUE,
+        fontSize = "21px",
+        lineHeight = "28px"
+      )) %>%
+    hc_subtitle(
+      text = paste0(subtitle),
+      style = list(
+        fontSize = "16px",
+        lineHeight = "22px"
+      )) %>%
     hc_caption(
       text = caption,
-      useHTML=TRUE) %>%
-
+      useHTML = TRUE,
+      style = list(
+        fontSize = "12px",
+        lineHeight = "18px"
+      )) %>%
     hc_add_theme(selected_theme) %>%
-
-    hc_chart(inverted = T,
-             height = 480) %>%
-
+    hc_chart(
+      inverted = TRUE,
+      height = 480,
+      reflow = TRUE,
+      marginLeft = 120,
+      marginRight = 120,
+      style = list(fontFamily = "Arial, sans-serif"),
+      events = list(
+        load = JS("function() {
+          var chart = this;
+          function updateSize() {
+            var width = chart.containerWidth;
+            var height = Math.max(480, width * 0.7);
+            if (width < 500) {
+              chart.update({
+                chart: {
+                  height: height,
+                  marginLeft: 20,
+                  marginRight: 20
+                },
+                legend: {
+                  align: 'center',
+                  verticalAlign: 'bottom',
+                  width: '25%',
+                  layout: 'horizontal',
+                  itemStyle: { fontSize: '12px' }
+                },
+                title: { style: { fontSize: '18px' } },
+                subtitle: { style: { fontSize: '14px' } },
+                caption: { style: { fontSize: '12px' } }
+              }, false);
+            } else {
+              chart.update({
+                chart: {
+                  height: height,
+                  marginLeft: 120,
+                  marginRight: 120
+                },
+                legend: {
+                  align: 'right',
+                  verticalAlign: 'middle',
+                  width: '10%',
+                  layout: 'vertical'
+                },
+                title: { style: { fontSize: '21px' } },
+                subtitle: { style: { fontSize: '16px' } },
+                caption: { style: { fontSize: '12px' } }
+              }, false);
+            }
+            chart.redraw();
+          }
+          updateSize();
+          window.addEventListener('resize', updateSize);
+        }")
+      )
+    ) %>%
     hc_exporting(
       enabled = TRUE,
-      sourceWidth=900,
-      sourceHeight=600,
-      chartOptions=list(plotOptions=list(
-        series=list(
-          dataLabels=list(
-            enabled=TRUE,
-            format=paste0(export_data_label))))),
-      filename = paste0(subtitle,"_Catalyst California, catalystcalifornia.org, ", format(Sys.Date(), "%Y"), "."),
-      buttons=list(contextButton=list(menuItems=list('downloadPNG', 'downloadSVG',
-                                                     'downloadXLS', 'downloadCSV')))
+      sourceWidth = 900,
+      sourceHeight = 600,
+      chartOptions = list(
+        plotOptions = list(
+          series = list(
+            dataLabels = list(
+              enabled = TRUE,
+              format = paste0(export_data_label),
+              style = list(fontSize = "14px")
+            )
+          )
+        )
+      ),
+      filename = paste0(
+        subtitle,
+        "_Catalyst California, catalystcalifornia.org, ",
+        format(Sys.Date(), "%Y"),
+        "."
+      ),
+      buttons = list(
+        contextButton = list(
+          menuItems = list(
+            "downloadPNG",
+            "downloadSVG",
+            "downloadXLS",
+            "downloadCSV"
+          )
+        )
+      )
     )
 
   return(result)
+}
 
-  }
