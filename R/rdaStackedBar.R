@@ -151,8 +151,7 @@ rdaStackedBar <- function(
     hc_xAxis(title = list(text = ""),
              labels = list(
                style = list(
-                 fontSize = "14px",
-                 textOverflow = "ellipsis"),
+                 fontSize = "14px"),
                overflow = "justify"),
              type = "category") %>%
 
@@ -165,7 +164,7 @@ rdaStackedBar <- function(
     hc_chart(
       height = 480,
       reflow = TRUE,
-      marginLeft = 140,
+      marginLeft = 150,
       marginRight = 100,
       style = list(fontFamily = "Arial, sans-serif"),
       events = list(
@@ -189,7 +188,7 @@ rdaStackedBar <- function(
               chart.update({
                 chart: {
                   height: height,
-                  marginLeft: 140,
+                  marginLeft: 150,
                   marginRight: 100
                 },
                 title: { style: { fontSize: '21px' } },
