@@ -101,7 +101,7 @@ rdaBar <- function(
     hc_xAxis(title = list(text = paste0("")),
              labels= list(position="bottom",
                           style = list(
-                            fontSize = "14px"),
+                            fontSize = "12px"),
                           overflow = "justify"),
              type = "category") %>%
 
@@ -125,8 +125,8 @@ rdaBar <- function(
               chart.update({
                 chart: {
                   height: height,
-                  marginLeft: 30,
-                  marginRight: 10
+                  marginLeft: 20,
+                  marginRight: 20
                 },
                 title: { style: { fontSize: '16px' } },
                 subtitle: { style: { fontSize: '14px' } },
