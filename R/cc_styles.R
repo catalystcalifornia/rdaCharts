@@ -40,21 +40,18 @@ theme_cc <- hc_theme(
       fontFamily = cc_font, # font_subtitle
       color=alabaster)),
 
-  title = list(widthAdjust = -50,
-               style = list(
+  title = list(style = list(
                  color = black,
                  fontFamily = cc_font, # font_title
                  fontWeight = black_font_weight,
-                 textAlign="left",
-                 fontSize='21px'),
+                 textAlign="left"),
                align = "left"),
 
   subtitle = list(
     style = list(
       color = black,
       fontFamily = cc_font, # font_subtitle
-      fontWeight = regular_font_weight,
-      fontSize='14px'),
+      fontWeight = regular_font_weight),
     align='left'),
 
   caption = list(
@@ -62,9 +59,7 @@ theme_cc <- hc_theme(
       color = black,
       fontFamily = cc_font, # font_caption
       fontWeight = regular_font_weight,
-      fontSize = "10px",
-      textAlign = "left",
-      width = 50),
+      textAlign = "left"),
     useHTML = TRUE,
     floating = FALSE),
 
@@ -74,9 +69,7 @@ theme_cc <- hc_theme(
         color=black,
         fontFamily = cc_font, # font_x_label
         fontWeight = semi_bold_font_weight,
-        width=120,  #argument to modify the width of the labels
-        min=0,
-        fontSize="10px")),
+        min=0)),
     lineColor=gainsboro),
 
   yAxis=list(
@@ -84,9 +77,7 @@ theme_cc <- hc_theme(
       style=list(
         color=black,
         fontFamily = cc_font, # font_axis_label
-        fontWeight = regular_font_weight,
-        fontSize="10px",
-        margin = 50)),
+        fontWeight = regular_font_weight)),
     gridLineWidth=0, # removes vertical grid lines
     visible=TRUE, # makes axis line visible
     lineWidth=1,
@@ -99,8 +90,7 @@ theme_cc <- hc_theme(
     itemStyle = list(
       fontFamily = cc_font, # font_axis_label
       fontWeight = regular_font_weight,
-      color = black,
-      fontSize = '12px'),
+      color = black),
     itemHoverStyle = list(
       fontFamily = cc_font, # font_table_text
       fontWeight = regular_font_weight,

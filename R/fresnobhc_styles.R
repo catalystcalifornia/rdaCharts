@@ -37,21 +37,18 @@ theme_fbhc <- hc_theme(
       fontFamily = fbhc_body_font,
       color=fbhc_white)),
 
-  title = list(widthAdjust = -50,
-               style = list(
+  title = list(style = list(
                  color = fbhc_black,
                  fontFamily = fbhc_title_font,
                  fontWeight = black_font_weight,
-                 textAlign="left",
-                 fontSize='21px'),
+                 textAlign="left"),
                align = "left"),
 
   subtitle = list(
     style = list(
       color = fbhc_black,
       fontFamily = fbhc_body_font,
-      fontWeight = regular_font_weight,
-      fontSize='14px'),
+      fontWeight = regular_font_weight),
     align='left'),
 
   caption = list(
@@ -59,9 +56,7 @@ theme_fbhc <- hc_theme(
       color = fbhc_black,
       fontFamily = fbhc_body_font,
       fontWeight = regular_font_weight,
-      fontSize = "14px",
-      textAlign = "left",
-      width = 50),
+      textAlign = "left"),
     useHTML = TRUE,
     floating = FALSE),
 
@@ -71,9 +66,7 @@ theme_fbhc <- hc_theme(
         color=fbhc_black,
         fontFamily = fbhc_body_font,
         fontWeight = semi_bold_font_weight,
-        width=120,  #argument to modify the width of the labels
-        min=0,
-        fontSize="14px")),
+        min=0)),
     lineColor=fbhc_grey),
 
   yAxis=list(
@@ -81,9 +74,7 @@ theme_fbhc <- hc_theme(
       style=list(
         color=fbhc_black,
         fontFamily = fbhc_body_font,
-        fontWeight = regular_font_weight,
-        fontSize="14px",
-        margin = 50)),
+        fontWeight = regular_font_weight)),
     gridLineWidth=0, # removes vertical grid lines
     visible=TRUE, # makes axis line visible
     lineWidth=1,
@@ -96,8 +87,7 @@ theme_fbhc <- hc_theme(
     itemStyle = list(
       fontFamily = fbhc_body_font,
       fontWeight = regular_font_weight,
-      color = fbhc_black,
-      fontSize = '14px'),
+      color = fbhc_black),
     itemHoverStyle = list(
       fontFamily = fbhc_body_font,
       fontWeight = regular_font_weight,
