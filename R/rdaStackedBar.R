@@ -178,10 +178,10 @@ rdaStackedBar <- function(
               chart.update({
                 chart: {
                   height: height,
-                  marginLeft: 20,
-                  marginRight: 20
+                  marginLeft: 40,
+                  marginRight: 0
                 },
-                title: { style: { fontSize: '18px' } },
+                title: { style: { fontSize: '16px' } },
                 subtitle: { style: { fontSize: '14px' } },
                 caption: { style: { fontSize: '12px' } }
               }, false);
@@ -189,8 +189,8 @@ rdaStackedBar <- function(
               chart.update({
                 chart: {
                   height: height,
-                  marginLeft: 120,
-                  marginRight: 120
+                  marginLeft: 220,
+                  marginRight: 20
                 },
                 title: { style: { fontSize: '21px' } },
                 subtitle: { style: { fontSize: '16px' } },
