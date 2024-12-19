@@ -165,8 +165,7 @@ rdaBubblepop <- function(
       enable = TRUE,
       align = "right",
       verticalAlign = "middle",
-      width = "12%",
-      layout = "horizontal",
+      layout = "vertical",
       borderWidth = 1,
       borderRadius = 5,
       itemMarginBottom = 10,
@@ -219,12 +218,6 @@ rdaBubblepop <- function(
                   marginLeft: 10,
                   marginRight: 10
                 },
-                legend: {
-                  align: 'center',
-                  verticalAlign: 'bottom',
-                  layout: 'vertical',
-                  itemStyle: { fontSize: '12px' }
-                },
                 title: { style: { fontSize: '16px' } },
                 subtitle: { style: { fontSize: '14px' } },
                 caption: { style: { fontSize: '12px' } }
@@ -235,12 +228,6 @@ rdaBubblepop <- function(
                   height: height,
                   marginLeft: 120,
                   marginRight: 120
-                },
-                legend: {
-                  align: 'right',
-                  verticalAlign: 'middle',
-                  width: '10%',
-                  layout: 'vertical'
                 },
                 title: { style: { fontSize: '21px' } },
                 subtitle: { style: { fontSize: '16px' } },
