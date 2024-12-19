@@ -77,26 +77,94 @@ rdaBar <- function(
 
     hc_tooltip(headerFormat='', # removes series label from top of tooltip
                pointFormat = tooltip_text,
-               useHTML=TRUE) %>%  # allows tooltip to read <br> html in reformatted tooltip_text
+               useHTML=TRUE,
+               style = list(fontSize = "14px")) %>%  # allows tooltip to read <br> html in reformatted tooltip_text
 
     hc_title(text = title,
-             style = list(useHTML = TRUE)) %>%
+             style = list(
+               useHTML = TRUE,
+               fontSize = "21px",
+               lineHeight = "28px")) %>%
 
-    hc_subtitle(text = subtitle) %>%
+    hc_subtitle(text = subtitle,
+                style = list(
+                  fontSize = "16px",
+                  lineHeight = "22px")) %>%
 
-    hc_caption(text = caption) %>%
+    hc_caption(text = caption,
+               style = list(
+                 fontSize = "12px",
+                 lineHeight = "18px")) %>%
 
     hc_yAxis(title = list(text = paste0(""))) %>%
 
-    hc_xAxis(title = list(text = paste0(""),
-                          labels=list(position="bottom")),
+    hc_xAxis(title = list(text = paste0("")),
+             labels= list(position="bottom",
+                          style = list(
+                            fontSize = "14px",
+                            textOverflow = "ellipsis"),
+                          overflow = "justify"),
              type = "category") %>%
 
     hc_legend(enabled=FALSE) %>%
 
     hc_add_theme(selected_theme) %>%
 
-    hc_chart(marginRight=120) %>%
+    hc_chart(
+      height = 480,
+      reflow = TRUE,
+      marginLeft = 120,
+      marginRight = 120,
+      style = list(fontFamily = "Arial, sans-serif"),
+      events = list(
+        load = JS("function() {
+          var chart = this;
+          function updateSize() {
+            var width = chart.containerWidth;
+            var height = Math.max(480, width * 0.7);
+            if (width < 500) {
+              chart.update({
+                chart: {
+                  height: height,
+                  marginLeft: 20,
+                  marginRight: 20
+                },
+                legend: {
+                  align: 'center',
+                  verticalAlign: 'bottom',
+                  width: '25%',
+                  layout: 'horizontal',
+                  itemStyle: { fontSize: '12px' }
+                },
+                title: { style: { fontSize: '18px' } },
+                subtitle: { style: { fontSize: '14px' } },
+                caption: { style: { fontSize: '12px' } }
+              }, false);
+            } else {
+              chart.update({
+                chart: {
+                  height: height,
+                  marginLeft: 120,
+                  marginRight: 120
+                },
+                legend: {
+                  align: 'right',
+                  verticalAlign: 'middle',
+                  width: '10%',
+                  layout: 'vertical'
+                },
+                title: { style: { fontSize: '21px' } },
+                subtitle: { style: { fontSize: '16px' } },
+                caption: { style: { fontSize: '12px' } }
+              }, false);
+            }
+            chart.redraw();
+          }
+          updateSize();
+          window.addEventListener('resize', updateSize);
+        }")
+      )
+    ) %>%
 
     hc_exporting(
       enabled = TRUE,
@@ -106,7 +174,8 @@ rdaBar <- function(
         series=list(
           dataLabels=list(
             enabled=TRUE,
-            format=paste0(export_data_label))))),
+            format=paste0(export_data_label),
+            style = list(fontSize = "14px"))))),
       filename = paste0(subtitle,"_Catalyst California, catalystcalifornia.org, ", format(Sys.Date(), "%Y"), "."),
       buttons=list(contextButton=list(menuItems=list('downloadPNG', 'downloadSVG',
                                                      'downloadXLS', 'downloadCSV')))
