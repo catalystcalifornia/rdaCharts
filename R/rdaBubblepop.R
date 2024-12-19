@@ -255,6 +255,7 @@ rdaBubblepop <- function(
         }")
       )
     ) %>%
+
     hc_exporting(
       enabled = TRUE,
       sourceWidth = 900,
