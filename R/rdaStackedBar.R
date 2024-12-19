@@ -165,8 +165,8 @@ rdaStackedBar <- function(
     hc_chart(
       height = 480,
       reflow = TRUE,
-      marginLeft = 120,
-      marginRight = 120,
+      marginLeft = 140,
+      marginRight = 100,
       style = list(fontFamily = "Arial, sans-serif"),
       events = list(
         load = JS("function() {
@@ -178,8 +178,8 @@ rdaStackedBar <- function(
               chart.update({
                 chart: {
                   height: height,
-                  marginLeft: 40,
-                  marginRight: 0
+                  marginLeft: 30,
+                  marginRight: 10
                 },
                 title: { style: { fontSize: '16px' } },
                 subtitle: { style: { fontSize: '14px' } },
@@ -189,8 +189,8 @@ rdaStackedBar <- function(
               chart.update({
                 chart: {
                   height: height,
-                  marginLeft: 220,
-                  marginRight: 20
+                  marginLeft: 140,
+                  marginRight: 100
                 },
                 title: { style: { fontSize: '21px' } },
                 subtitle: { style: { fontSize: '16px' } },

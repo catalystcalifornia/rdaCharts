@@ -203,7 +203,7 @@ rdaBubblepop <- function(
       inverted = TRUE,
       height = 480,
       reflow = TRUE,
-      marginLeft = 120,
+      marginLeft = 100,
       marginRight = 120,
       style = list(fontFamily = "Arial, sans-serif"),
       events = list(
@@ -234,7 +234,7 @@ rdaBubblepop <- function(
               chart.update({
                 chart: {
                   height: height,
-                  marginLeft: 120,
+                  marginLeft: 100,
                   marginRight: 120
                 },
                 legend: {
