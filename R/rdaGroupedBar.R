@@ -150,7 +150,6 @@ rdaGroupedBar <- function(
              overflow = "justify") %>%
 
     hc_legend(enabled = TRUE,
-              x = 20,
               style = list(fontSize = "14px"))%>%
 
     hc_add_theme(selected_theme) %>%
@@ -174,13 +173,6 @@ rdaGroupedBar <- function(
                   marginLeft: 20,
                   marginRight: 20
                 },
-                legend: {
-                  align: 'center',
-                  verticalAlign: 'bottom',
-                  width: '25%',
-                  layout: 'horizontal',
-                  itemStyle: { fontSize: '12px' }
-                },
                 title: { style: { fontSize: '18px' } },
                 subtitle: { style: { fontSize: '14px' } },
                 caption: { style: { fontSize: '12px' } }
@@ -191,12 +183,6 @@ rdaGroupedBar <- function(
                   height: height,
                   marginLeft: 120,
                   marginRight: 120
-                },
-                legend: {
-                  align: 'right',
-                  verticalAlign: 'middle',
-                  width: '10%',
-                  layout: 'vertical'
                 },
                 title: { style: { fontSize: '21px' } },
                 subtitle: { style: { fontSize: '16px' } },
