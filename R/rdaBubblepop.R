@@ -226,7 +226,7 @@ rdaBubblepop <- function(
                   layout: 'horizontal',
                   itemStyle: { fontSize: '12px' }
                 },
-                title: { style: { fontSize: '18px' } },
+                title: { style: { fontSize: '16px' } },
                 subtitle: { style: { fontSize: '14px' } },
                 caption: { style: { fontSize: '12px' } }
               }, false);

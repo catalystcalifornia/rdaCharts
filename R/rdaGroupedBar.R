@@ -170,10 +170,10 @@ rdaGroupedBar <- function(
               chart.update({
                 chart: {
                   height: height,
-                  marginLeft: 20,
-                  marginRight: 20
+                  marginLeft: 40,
+                  marginRight: 0
                 },
-                title: { style: { fontSize: '18px' } },
+                title: { style: { fontSize: '16px' } },
                 subtitle: { style: { fontSize: '14px' } },
                 caption: { style: { fontSize: '12px' } }
               }, false);
