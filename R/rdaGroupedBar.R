@@ -124,12 +124,14 @@ rdaGroupedBar <- function(
         fontSize = "21px",
         lineHeight = "28px"
       )) %>%
+
     hc_subtitle(
       text = paste0(subtitle),
       style = list(
         fontSize = "16px",
         lineHeight = "22px"
       )) %>%
+
     hc_caption(
       text = caption,
       useHTML = TRUE,
@@ -169,8 +171,8 @@ rdaGroupedBar <- function(
               chart.update({
                 chart: {
                   height: height,
-                  marginLeft: 20,
-                  marginRight: 20
+                  marginLeft: 10,
+                  marginRight: 10
                 },
                 title: { style: { fontSize: '16px' } },
                 subtitle: { style: { fontSize: '14px' } },

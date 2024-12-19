@@ -177,8 +177,8 @@ rdaStackedBar <- function(
               chart.update({
                 chart: {
                   height: height,
-                  marginLeft: 20,
-                  marginRight: 20
+                  marginLeft: 10,
+                  marginRight: 10
                 },
                 title: { style: { fontSize: '16px' } },
                 subtitle: { style: { fontSize: '14px' } },
