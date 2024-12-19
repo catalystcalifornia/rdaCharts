@@ -201,9 +201,9 @@ rdaBubblepop <- function(
     hc_add_theme(selected_theme) %>%
     hc_chart(
       inverted = TRUE,
-      height = 480,
+      height = 600,
       reflow = TRUE,
-      marginLeft = 100,
+      marginLeft = 120,
       marginRight = 120,
       style = list(fontFamily = "Arial, sans-serif"),
       events = list(
@@ -211,7 +211,7 @@ rdaBubblepop <- function(
           var chart = this;
           function updateSize() {
             var width = chart.containerWidth;
-            var height = Math.max(480, width * 0.7);
+            var height = Math.max(600, width * 0.7);
             if (width < 500) {
               chart.update({
                 chart: {
@@ -234,7 +234,7 @@ rdaBubblepop <- function(
               chart.update({
                 chart: {
                   height: height,
-                  marginLeft: 100,
+                  marginLeft: 120,
                   marginRight: 120
                 },
                 legend: {
