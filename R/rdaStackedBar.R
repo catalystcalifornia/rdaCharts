@@ -151,13 +151,13 @@ rdaStackedBar <- function(
     hc_xAxis(title = list(text = ""),
              labels = list(
                style = list(
-                 fontSize = "14px"),
+                 fontSize = "12px"),
                overflow = "justify"),
              type = "category") %>%
 
     hc_legend(enabled = TRUE,
               reversed =  TRUE,
-              style = list(fontSize = "14px")) %>%
+              style = list(fontSize = "12px")) %>%
 
     hc_add_theme(selected_theme) %>%
 
@@ -177,8 +177,8 @@ rdaStackedBar <- function(
               chart.update({
                 chart: {
                   height: height,
-                  marginLeft: 30,
-                  marginRight: 10
+                  marginLeft: 20,
+                  marginRight: 20
                 },
                 title: { style: { fontSize: '16px' } },
                 subtitle: { style: { fontSize: '14px' } },

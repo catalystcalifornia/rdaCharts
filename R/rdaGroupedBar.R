@@ -139,17 +139,17 @@ rdaGroupedBar <- function(
       )) %>%
 
     hc_yAxis(title = list(text = ""),
-             style = list(fontSize = "14px")) %>%
+             style = list(fontSize = "12px")) %>%
 
     hc_xAxis(title = list(text = ""),
              type = "category",
              labels = list(position="bottom",
                            style = list(
-                             fontSize = "14px")),
+                             fontSize = "12px")),
              overflow = "justify") %>%
 
     hc_legend(enabled = TRUE,
-              style = list(fontSize = "14px"))%>%
+              style = list(fontSize = "12px"))%>%
 
     hc_add_theme(selected_theme) %>%
 
@@ -169,8 +169,8 @@ rdaGroupedBar <- function(
               chart.update({
                 chart: {
                   height: height,
-                  marginLeft: 30,
-                  marginRight: 10
+                  marginLeft: 20,
+                  marginRight: 20
                 },
                 title: { style: { fontSize: '16px' } },
                 subtitle: { style: { fontSize: '14px' } },

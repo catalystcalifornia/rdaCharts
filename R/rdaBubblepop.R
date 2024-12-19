@@ -140,7 +140,7 @@ rdaBubblepop <- function(
       min = 0,
       labels = list(
         style = list(
-          fontSize = "14px",
+          fontSize = "12px",
           textOverflow = "ellipsis"
         ),
         overflow = "justify"
@@ -150,7 +150,7 @@ rdaBubblepop <- function(
       title = list(text = ""),
       labels = list(
         formatter = JS(yaxis_label_JS),
-        style = list(fontSize = "14px")
+        style = list(fontSize = "12px")
       )
     ) %>%
     hc_legend(
@@ -170,13 +170,13 @@ rdaBubblepop <- function(
       borderWidth = 1,
       borderRadius = 5,
       itemMarginBottom = 10,
-      itemStyle = list(fontSize = "14px"),
+      itemStyle = list(fontSize = "12px"),
       bubbleLegend = list(
         enabled = TRUE,
         connectorDistance = 20,
         labels = list(
           format = "{value:,.0f}",
-          style = list(fontSize = "14px")
+          style = list(fontSize = "12px")
         ))) %>%
     hc_title(
       text = paste0(title),
