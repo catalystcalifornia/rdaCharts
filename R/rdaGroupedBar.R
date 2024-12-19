@@ -143,10 +143,9 @@ rdaGroupedBar <- function(
 
     hc_xAxis(title = list(text = ""),
              type = "category",
-             labels = list(position="bottom"),
-             style = list(
-               fontSize = "14px",
-               textOverflow = "ellipsis"),
+             labels = list(position="bottom",
+                           style = list(
+                             fontSize = "14px")),
              overflow = "justify") %>%
 
     hc_legend(enabled = TRUE,
@@ -157,7 +156,7 @@ rdaGroupedBar <- function(
     hc_chart(
       height = 480,
       reflow = TRUE,
-      marginLeft = 140,
+      marginLeft = 150,
       marginRight = 100,
       style = list(fontFamily = "Arial, sans-serif"),
       events = list(
@@ -181,7 +180,7 @@ rdaGroupedBar <- function(
               chart.update({
                 chart: {
                   height: height,
-                  marginLeft: 140,
+                  marginLeft: 150,
                   marginRight: 100
                 },
                 title: { style: { fontSize: '21px' } },
