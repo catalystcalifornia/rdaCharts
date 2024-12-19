@@ -160,7 +160,7 @@ rdaBubblepop <- function(
           "<b>Line shows<br><i>the rate.</i></b><br>",
           "<b>Bubble shows<br><i>total people", ripa_flag, ".</i></b></span>"
         ),
-        style = list(fontSize = "14px")
+        style = list(fontSize = "12px")
       ),
       enable = TRUE,
       align = "right",
@@ -216,14 +216,13 @@ rdaBubblepop <- function(
               chart.update({
                 chart: {
                   height: height,
-                  marginLeft: 20,
-                  marginRight: 20
+                  marginLeft: 10,
+                  marginRight: 10
                 },
                 legend: {
                   align: 'center',
                   verticalAlign: 'bottom',
-                  width: '25%',
-                  layout: 'horizontal',
+                  layout: 'vertical',
                   itemStyle: { fontSize: '12px' }
                 },
                 title: { style: { fontSize: '16px' } },
