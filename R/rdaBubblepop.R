@@ -157,7 +157,7 @@ rdaBubblepop <- function(
       title = list(
         text = paste0(
           "<span style='color: #000000; font-weight: 400; display: block; text-align: center'>",
-          "<b>Line shows <i>the rate.</i></b> ",
+          "<b>Line shows <i>the rate.</i></b><br>",
           "<b>Bubble shows <i>total people", ripa_flag, ".</i></b></span>"
         ),
         style = list(fontSize = "12px")
