@@ -205,7 +205,6 @@ rdaBubblepop <- function(
       reflow = TRUE,
       marginLeft = 120,
       marginRight = 120,
-      style = list(fontFamily = "Arial, sans-serif"),
       events = list(
         load = JS("function() {
           var chart = this;
