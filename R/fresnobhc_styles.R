@@ -19,9 +19,9 @@ fbhc_colors <- c(community_safety, primary_color, fbhc_grey_gradient, fbhc_black
 
 
 ## FONTS ##
-fbhc_h1_font <- "Source Serif Pro"
-fbhc_title_font <- "Montserrat"
-fbhc_body_font <- "Open Sans"
+fbhc_h1_font <- "source-serif-pro"
+fbhc_title_font <- "montserrat"
+fbhc_body_font <- "open-sans"
 
 regular_font_weight <- 400
 black_font_weight <- 800
