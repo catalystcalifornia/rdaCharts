@@ -175,7 +175,9 @@ rdaBubblepop <- function(
         enabled = TRUE,
         connectorDistance = 20,
         labels = list(
-          style = list(fontSize = "12px")
+            format = "{value:f}",
+            thousandsSep = ",",
+            style = list(fontSize = "12px")
         ))) %>%
     hc_title(
       text = paste0(title),
