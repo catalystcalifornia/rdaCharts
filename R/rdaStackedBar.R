@@ -186,17 +186,16 @@ rdaStackedBar <- function(
           labels: {
             style: { 
               fontSize: '11px',
-              backgroundColor: 'white',
-              padding: '2px 4px',
-              borderRadius: '2px'
+              textOutline: '2px white',  // Adds white border around text
+              fontWeight: 'bold'         // Makes text bolder to stand out
             },
-            align: 'right',
-            x: -5,
-            y: 0,
+            align: 'left',
+            x: 5,
+            y: -5,
             useHTML: true,
             overflow: 'allow',
             position: {
-              align: 'right',
+              align: 'left',
               x: 0,
               y: 0
             }
