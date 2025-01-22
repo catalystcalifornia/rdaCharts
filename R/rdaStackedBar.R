@@ -168,54 +168,38 @@ rdaStackedBar <- function(
       marginRight = 120,
       events = list(
         load = JS("function() {
-  var chart = this;
-  function updateSize() {
-    var width = chart.containerWidth;
-    var height = Math.max(600, width * 0.7);
-    if (width < 500) {
-      chart.update({
-        chart: {
-          height: height,
-          marginLeft: 10,
-          marginRight: 10
-        },
-        title: { style: { fontSize: '16px' } },
-        subtitle: { style: { fontSize: '14px' } },
-        caption: { style: { fontSize: '12px' } },
-        xAxis: {
-          labels: {
-            style: { fontSize: '11px' },
-            rotation: -45,
-            align: 'right',
-            useHTML: true,
-            overflow: 'allow'
+          var chart = this;
+          function updateSize() {
+            var width = chart.containerWidth;
+            var height = Math.max(600, width * 0.7);
+            if (width < 500) {
+              chart.update({
+                chart: {
+                  height: height,
+                  marginLeft: 10,
+                  marginRight: 10
+                },
+                title: { style: { fontSize: '16px' } },
+                subtitle: { style: { fontSize: '14px' } },
+                caption: { style: { fontSize: '12px' } }
+              }, false);
+            } else {
+              chart.update({
+                chart: {
+                  height: height,
+                  marginLeft: 120,
+                  marginRight: 120
+                },
+                title: { style: { fontSize: '21px' } },
+                subtitle: { style: { fontSize: '16px' } },
+                caption: { style: { fontSize: '12px' } }
+              }, false);
+            }
+            chart.redraw();
           }
-        }
-      }, false);
-    } else {
-      chart.update({
-        chart: {
-          height: height,
-          marginLeft: 120,
-          marginRight: 120
-        },
-        title: { style: { fontSize: '21px' } },
-        subtitle: { style: { fontSize: '16px' } },
-        caption: { style: { fontSize: '12px' } },
-        xAxis: {
-          labels: {
-            style: { fontSize: '12px' },
-            rotation: 0,
-            overflow: 'justify'
-          }
-        }
-      }, false);
-    }
-    chart.redraw();
-  }
-  updateSize();
-  window.addEventListener('resize', updateSize);
-}")
+          updateSize();
+          window.addEventListener('resize', updateSize);
+        }")
       )
     ) %>%
 
