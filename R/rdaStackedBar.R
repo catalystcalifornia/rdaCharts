@@ -190,13 +190,13 @@ rdaStackedBar <- function(
               padding: '2px 4px',
               borderRadius: '2px'
             },
-            align: 'right',
-            x: -5,
-            y: 0,
+            align: 'left',
+            x: 5,
+            y: -5,
             useHTML: true,
             overflow: 'allow',
             position: {
-              align: 'right',
+              align: 'left',
               x: 0,
               y: 0
             }
