@@ -184,11 +184,7 @@ rdaStackedBar <- function(
         caption: { style: { fontSize: '12px' } },
         xAxis: {
           labels: {
-            style: { 
-              fontSize: '11px',
-              textOutline: '2px white',  // Adds white border around text
-              fontWeight: 'bold'         // Makes text bolder to stand out
-            },
+            style: { fontSize: '11px' },
             align: 'left',
             x: 5,
             y: -5,
