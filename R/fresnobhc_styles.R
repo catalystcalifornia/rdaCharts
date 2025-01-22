@@ -18,9 +18,9 @@ fbhc_grey_gradient <- c("#DDDEE2", "#BABBBF", "#98999D", "#75767A", "#525357")
 fbhc_colors <- c(community_safety, primary_color, fbhc_grey_gradient, fbhc_black, primary_color_gradienct, community_safety_gradient, divergent_color_gradient)
 
 ## FONTS ##
-fbhc_h1_font <- "source-serif-pro"
-fbhc_title_font <- "montserrat"
-fbhc_body_font <- "open-sans"
+# fbhc_h1_font <- "source-serif-pro"
+fbhc_title_font <- "Montserrat"
+fbhc_body_font <- "Open Sans"
 
 regular_font_weight <- 400
 black_font_weight <- 800
