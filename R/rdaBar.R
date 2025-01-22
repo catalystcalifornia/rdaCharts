@@ -71,7 +71,7 @@ rdaBar <- function(
 
     hc_add_series(df,
                "bar",
-               name="",
+               name=y,
                hcaes(x = !!rlang::ensym(x),
                      y = !!rlang::ensym(y))) %>%
 
