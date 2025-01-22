@@ -114,7 +114,7 @@ rdaBar <- function(
       reflow = TRUE,
       marginLeft = 120,
       marginRight = 120,
-      style = list(fontFamily = "open-sans"),
+      style = list(fontFamily = "Open Sans"),
       events = list(
         load = JS("function() {
           var chart = this;
