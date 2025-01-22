@@ -185,19 +185,11 @@ rdaStackedBar <- function(
         xAxis: {
           labels: {
             style: { fontSize: '11px' },
-            align: 'left',
-            x: 5,
-            y: -5,
+            rotation: -45,
+            align: 'right',
             useHTML: true,
-            overflow: 'allow',
-            position: {
-              align: 'left',
-              x: 0,
-              y: 0
-            }
-          },
-          offset: 0,
-          tickLength: 0
+            overflow: 'allow'
+          }
         }
       }, false);
     } else {
@@ -213,6 +205,7 @@ rdaStackedBar <- function(
         xAxis: {
           labels: {
             style: { fontSize: '12px' },
+            rotation: 0,
             overflow: 'justify'
           }
         }
